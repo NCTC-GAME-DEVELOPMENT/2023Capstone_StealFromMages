@@ -1,0 +1,49 @@
+Concept #1
+Survive waves of enemies as you explore the wilderness and defeat enemy waves and go for as long as you can collecting powerups and going where no adventurer has gone before. 
+
+Simple Art style 
+
+Wave Defense Game in similar gameloop style of Stardew Valley minigame "Journey of the Prairie King"
+	
+	* Twin Stick Shooter * 
+	Mouse Targeting allowing for full 360 direction shooting
+		Can do Shooter Like Enter the Gungeon	
+		various powerups
+		different Weapon styles
+		Speed
+		Invulerability etc
+	
+	Few Enemies
+		Fast
+		Tough
+		Cannon Fodder
+		Shooter
+	
+	Boss/s with interchangable movesets
+			Dasher 
+			Area of Effect Attack
+				Moving
+				Stationary
+				Arena Wide
+			Inivisibilty(Mostly) until Attacks 1-2 second Reveal time before
+			Projectiles
+			Summon Minions
+			Lasting Area of effect
+	
+	
+
+
+Concept #2
+Defend the mining outpost from the incoming Asteroid Swarm, but "Oh No!" there is no Defense craft,
+take your Miner ship out to Drill them into dust! Can you destroy all the incoming Asteroid including Giant Asteroids that Take Time to Dig out, 
+as well as protect the other miners?
+
+
+ Asteroids But instead of gun you ram into them Fruit Ninja style 
+
+
+	using mouse as a Directional guide stoping when it reaches speeding up to reach it slowing down when approaching
+	Time Limit Destroy as many as possible
+	Simple Easy
+	Bigger Asteroids take more hits Visible Wearing Down but gives more points
+	Friendly ships that you have to protect/ Not Ram into
