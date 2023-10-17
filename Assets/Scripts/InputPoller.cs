@@ -49,13 +49,16 @@ public class InputPoller : MonoBehaviour
         InputData input = InputData.CleanDataStruct();
 
         Keyboard kb = Keyboard.current; 
+        Mouse mouse = Mouse.current;
         // Verifiy we have Keyboard data 
-        if (kb != null)
+        if ( (kb != null) && (mouse != null) ) 
         {
-            input.buttonNorth = kb.wKey.wasPressedThisFrame;
-            input.buttonSouth = kb.sKey.wasReleasedThisFrame;
-            input.buttonEast = kb.aKey.isPressed;
-            input.buttonEast = kb.dKey.isPressed;
+            if (kb.wKey.isPressed) { input.leftStick.y = 1;  }
+            if (kb.sKey.isPressed) { input.leftStick.y = -1; }
+            if (kb.aKey.isPressed) { input.leftStick.x = -1; }
+            if (kb.dKey.isPressed) { input.leftStick.x = 1; }
+
+            input.rightStick = mouse.position.value; 
 
         }
 

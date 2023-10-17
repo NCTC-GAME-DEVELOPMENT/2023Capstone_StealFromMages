@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
         input = InputPoller.reference.GetInput(playerNumber);
         rb.velocity = Vector2.zero;
 
+        if (playerNumber == 0)
+        {
+            KBMConversions(); 
+        }
+
         MovePlayer(input.leftStick);
         RotatePlayer(input.rightStick); 
 
@@ -30,6 +35,11 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Fire"); 
         }    
         
+    }
+
+    void KBMConversions()
+    {
+        //input.rightStick = (input.rightStick - gameObject.transform.position).normalized;
     }
 
     void MovePlayer (Vector2 value)
