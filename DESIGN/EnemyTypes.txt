@@ -1,0 +1,24 @@
+Pathpoint 
+	Has a WaitAt Varible 
+
+
+GruntScript 
+
+1. PathRunner Grunt 
+	Has a path it runs on 
+	Doesn't deviate from it 
+	Uses the WaitAt varible 
+
+2. Heat Seak Grunt
+	Starts on a path, 
+	Will move to player if player is in radius. 
+	Walls and Facing Doesn't matter 
+
+	Outside of Radius, will return to the path it's walking on 
+
+3. Vision Grunt
+	Upgraded Heat Sink
+	Facing Matters 
+	Walls Matter 
+
+	Do we need to add more info than path points? 
