@@ -38,7 +38,8 @@ public class RoamPathing : MonoBehaviour, IPathfindingType {
     }
     // This is Very Clunky
     private void FindNewTarget(Vector2 _currentPosition) {
-        targetPosition = originPosition + (new Vector2(Random.Range(2, roamRadius), Random.Range(2, roamRadius)) * (Random.Range(0, 2) * 2 - 1));
+        targetPosition = originPosition + (new Vector2(Random.Range(1, roamRadius), Random.Range(1, roamRadius)) * (Random.Range(0, 2) * 2 - 1));
+        Debug.Log("Roaming Target Position: " + targetPosition);
     }
     static protected bool IsPointReached(Vector2 _posOne, Vector2 _posTwo) {
         return Vector2.Distance(_posOne, _posTwo) < .1f;

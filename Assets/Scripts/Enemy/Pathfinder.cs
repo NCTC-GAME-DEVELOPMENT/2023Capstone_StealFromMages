@@ -40,5 +40,6 @@ public class Pathfinder : MonoBehaviourSingleton<Pathfinder>
             CalculateFCost();
             originNodeIndex = -1;
         }
+        public static implicit operator Vector2(PathNode _node) => new Vector2(_node.x, _node.y);
     }
 }
