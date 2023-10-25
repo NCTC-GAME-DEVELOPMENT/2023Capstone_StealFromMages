@@ -27,4 +27,7 @@ This is the Boss Battle
 
 	** Need Brick and Garden Assets 
 	** Need Boss Flower 
-	** Need Blowupable things (Big Rocky explosion bits!?!) 
+	** Need Blowupable things (Big Rocky explosion bits!?!)
+
+Post Battle Player gets {McGuffin} and some narrative that suggests bigger and grander adventures. 
+Does the Mcguffin talk to the player? (Outlander from Dishonored, but better writen to nudge the player to chaos) 
