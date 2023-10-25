@@ -3,7 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
-public class RigidPatrolPathing : MonoBehaviour, IPathfindingType {
+public class RigidPatrolPathing : MonoBehaviour, IPassivePathfindingType {
+    /* Todo:
+     * Detection Radius 
+     */
     [SerializeField]
     private List<PatrolPoint> patrolPoints;
     [SerializeField]

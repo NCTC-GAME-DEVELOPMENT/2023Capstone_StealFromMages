@@ -1,45 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Pathfinder : MonoBehaviourSingleton<Pathfinder>
 {
-    private const int MOVE_DIAGONAL_COST = 14;
-    private const int MOVE_STRAIGHT_COST = 10;
+    /* Todo
+     * Have List that Updates On Scene Change full of Enemies and Everyso often Check Distance between Player
+     */
     [SerializeField]
-    private readonly Transform playerTransform;
+    private static Transform playerTransform;
+    [SerializeField]
+    private List<EnemyMovement> enemyTransforms = new List<EnemyMovement>();
     public override void Awake() {
         base.Awake();
     }
+    public void Start() {
+        playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
+        IsPlayerInAggroDistance();
+    }
+    public void FixedUpdate() {
+        //IsPlayerInAggroDistance();
+    }
+    public static Vector3 GetPlayerPosition() => playerTransform.position;
+    public void IsPlayerInAggroDistance() {
+        if (playerTransform == null) {
+            Debug.Log("Player not Found, trying to find New Player");
+            playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;       
+        }
+        else 
+            foreach (EnemyMovement enemy in enemyTransforms)
+            {
+                if (Vector3.Distance(playerTransform.position, enemy.GetPosition()) < enemy.AggroDistance)
+                    enemy.SwitchAggroStance();
+                else
+                    enemy.SwitchPassiveStance();
+            }
+        TickSystem.Instance?.CreateTimer(IsPlayerInAggroDistance, (uint)5);
+        Debug.Log("PlayerCheck");
+    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public struct PathNode {
-        public int index;
-        public int x, y;
-        public int fCost, gCost, hCost;
-        public bool isTraversable;
-        public int originNodeIndex;
-        private void CalculateFCost() {
-            fCost = gCost + hCost;
-        }
-        private void CalculateDistanceCost(int2 _postionOne, int2 _positionTwo) {
-            int xDistance = math.abs(_postionOne.x - _positionTwo.x);
-            int yDistance = math.abs(_postionOne.y - _positionTwo.y);
-            int remaining = math.abs(xDistance - yDistance);
-            hCost = MOVE_DIAGONAL_COST * math.min(xDistance, yDistance) + MOVE_STRAIGHT_COST * remaining;
-        }
-        public void SetNode(int _index, int2 _postionOne, int2 _positionTwo) {
-            this.index = _index;
-            gCost = int.MaxValue;
-            CalculateDistanceCost(_postionOne, _positionTwo);
-            CalculateFCost();
-            originNodeIndex = -1;
-        }
-        public static implicit operator Vector2(PathNode _node) => new Vector2(_node.x, _node.y);
-    }
 }
