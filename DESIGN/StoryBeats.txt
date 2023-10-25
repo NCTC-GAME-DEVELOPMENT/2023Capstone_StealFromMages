@@ -1,0 +1,30 @@
+
+Level 1: 
+Player is tasked to steal {Mcguffin name} from {Mage Name}
+
+Player learns to move around and shoot things. 
+
+	** Need Nature Look Level Assets 
+	** Need Destroyable things 
+Player is introduced to Enemies 
+	** Need Enemies
+
+Player Reaches {Mage Name Fortress}
+
+Level 2:
+Player enters Fortress 
+Player Encounters "Vision" enemies 
+
+Player will get narrative\world building notes through out the level 
+
+
+Level 3
+Player Enters Fortress Center 
+Player finds out about the truth about {Mage Name}'s patron demands\wants\crazy stuff that {Mage Name} is using {Mcguffin Name}. 
+... the narriative set up for the Boss Battle 
+
+This is the Boss Battle 
+
+	** Need Brick and Garden Assets 
+	** Need Boss Flower 
+	** Need Blowupable things (Big Rocky explosion bits!?!) 
