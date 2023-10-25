@@ -1,0 +1,13 @@
+ALYSSA - ART IMPLEMENTATION
+
+splash screen w/ school logo and program
+
+create opening menu and navigation to level(s)
+
+create framework for tilesheets for level building, including a collision and non-collision layer
+
+animations
+	-character
+	-enemies
+	-attacks
+	-environment?
