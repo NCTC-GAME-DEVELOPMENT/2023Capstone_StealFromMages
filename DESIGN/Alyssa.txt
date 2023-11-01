@@ -11,3 +11,15 @@ animations
 	-enemies
 	-attacks
 	-environment?
+
+temp tile maps for setting up
+	https://cainos.itch.io/pixel-art-top-down-basic
+
+
+//what have i done
+
+	-created sprite sheets
+	-set up tile maps and collision tile maps
+	-created animations from sprite sheets
+		-all slimes, spiders
+	-created scenes for each level, intro and ending
