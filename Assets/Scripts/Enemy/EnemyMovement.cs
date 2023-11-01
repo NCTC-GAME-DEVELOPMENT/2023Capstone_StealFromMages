@@ -19,31 +19,27 @@ public class EnemyMovement : MonoBehaviour {
     }
     private bool isAggro = false;
     void Start() {
+        IsPlayerInAggroDistance();
         passivePathfinding = GetComponent<IPassivePathfindingType>();
         aggroPathfinding = GetComponent <IAggroPathfindingType>();
     }
 
     // Update is called once per frame
     void Update() {
-
         if (movementSpeed != 0)
-            Move(isAggro ? aggroPathfinding == null ? aggroPathfinding.Pathfind(transform.position) : passivePathfinding.Pathfind(transform.position) : passivePathfinding.Pathfind(transform.position));
+            if (aggroPathfinding is not null)
+            Move( isAggro ?  aggroPathfinding.Pathfind(transform.position): passivePathfinding.Pathfind(transform.position));
         
     }
-    public Vector3 GetPosition() => transform.position; 
+    public Vector3 GetPosition() => transform.position;
     // Make Sure That the Parmemeter is Normalized First
+    public void IsPlayerInAggroDistance() {
+        isAggro = Vector2.Distance(Pathfinder.Instance.GetPlayerPosition(), transform.position) < AggroDistance;
+        TickSystem.Instance?.CreateTimer(IsPlayerInAggroDistance, (uint)10);
+    }
     private void Move(Vector2 _desiredDirection) {
-            rigidbody.velocity = _desiredDirection * movementSpeed;
+        rigidbody.velocity = _desiredDirection * movementSpeed;
     }
-    public void SwitchAggroStance()
-    {
-        isAggro = true;
-    }
-    public void SwitchPassiveStance()
-    {
-        isAggro = false;
-    }
-
 }
 public interface IPassivePathfindingType {
     // Make Sure That you Return A Normalized Vector
