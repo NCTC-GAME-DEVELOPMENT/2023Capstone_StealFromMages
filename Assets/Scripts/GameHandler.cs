@@ -20,6 +20,5 @@ public class GameHandler : MonoBehaviourSingleton<GameHandler>
     }
     public void FixedUpdate() { 
         tickSystem.ProgressTick();
-        Debug.Log("Cuurent Tick is " + tickSystem.GetCurrentTick());
     }
 }

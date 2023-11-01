@@ -21,15 +21,15 @@ public class EnemyMovement : MonoBehaviour {
     void Start() {
         IsPlayerInAggroDistance();
         passivePathfinding = GetComponent<IPassivePathfindingType>();
-        aggroPathfinding = GetComponent <IAggroPathfindingType>();
+        aggroPathfinding = GetComponent<IAggroPathfindingType>();
     }
 
     // Update is called once per frame
     void Update() {
         if (movementSpeed != 0)
             if (aggroPathfinding is not null)
-            Move( isAggro ?  aggroPathfinding.Pathfind(transform.position): passivePathfinding.Pathfind(transform.position));
-        
+                Move(isAggro ? aggroPathfinding.Pathfind(transform.position) : passivePathfinding.Pathfind(transform.position));
+
     }
     public Vector3 GetPosition() => transform.position;
     // Make Sure That the Parmemeter is Normalized First
@@ -44,7 +44,8 @@ public class EnemyMovement : MonoBehaviour {
 public interface IPassivePathfindingType {
     // Make Sure That you Return A Normalized Vector
     public abstract Vector2 Pathfind(Vector2 _currentPosition);
-}public interface IAggroPathfindingType {
+}
+public interface IAggroPathfindingType {
     // Make Sure That you Return A Normalized Vector
     public abstract Vector2 Pathfind(Vector2 _currentPosition);
 }

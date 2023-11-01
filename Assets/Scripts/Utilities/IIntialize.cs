@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IInitialize
-{
+public interface IInitialize {
 
     private static bool isInitialized;
-    public virtual void Initialize()
-    {
-        if (!isInitialized)
-        {
+    public virtual void Initialize() {
+        if (!isInitialized) {
             InitializeMain();
             isInitialized = true;
         }

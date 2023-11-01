@@ -34,11 +34,11 @@ public class RoamPathing : MonoBehaviour, IPassivePathfindingType {
                 timeWaited = 0;
             }
 
-        } 
+        }
         else
             if (IsPointReached(targetPosition, _currentPosition)) {
-                isWaiting = true;
-                FindNewTarget(_currentPosition);
+            isWaiting = true;
+            FindNewTarget(_currentPosition);
         }
         return GetHeading(_currentPosition);
     }
@@ -48,7 +48,6 @@ public class RoamPathing : MonoBehaviour, IPassivePathfindingType {
     // This is Very Clunky
     private void FindNewTarget(Vector2 _currentPosition) {
         targetPosition = originPosition + (new Vector2(Random.Range(minimumDistance, roamRadius), Random.Range(minimumDistance, roamRadius)) * (Random.Range(0, 2) * 2 - 1));
-        Debug.Log("Roaming Target Position: " + targetPosition);
     }
     static protected bool IsPointReached(Vector2 _posOne, Vector2 _posTwo) {
         return Vector2.Distance(_posOne, _posTwo) < .1f;

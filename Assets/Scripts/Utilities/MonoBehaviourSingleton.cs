@@ -17,7 +17,7 @@ public abstract class MonoBehaviourSingleton<T> : MonoBehaviour where T : MonoBe
         }
         else {
 #if UNITY_EDITOR
-            Debug.Log("Created Singleton : " + this.name);
+            Debug.Log(string.Format("Created Singleton : {0} inside {1}" , GetType().Name ,this.name));
 #endif
             Instance = (T)this;
             if (isPersistent)
