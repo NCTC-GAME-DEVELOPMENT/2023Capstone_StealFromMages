@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -14,6 +15,10 @@ public class EnemyMovement : MonoBehaviour {
     private IAggroPathfindingType aggroPathfinding;
     [SerializeField]
     private float aggroDistance;
+    [SerializeField]
+    private bool isShooter;
+    [SerializeField]
+    private NormalProjectileScriptableObject projectileScriptableObject;
     public float AggroDistance {
         get => aggroDistance;
     }
@@ -30,6 +35,17 @@ public class EnemyMovement : MonoBehaviour {
             if (aggroPathfinding is not null)
                 Move(isAggro ? aggroPathfinding.Pathfind(transform.position) : passivePathfinding.Pathfind(transform.position));
 
+        // Need To Seperate isAggro into Main Mono that other Scripts can call
+        if (isAggro && isShooter && projectileScriptableObject is not null) {
+            ProjectileHandler.Instance.ShootProjectile(
+                GetPosition(),
+                (Pathfinder.Instance.GetPlayerPosition() - (Vector2)GetPosition()).normalized,
+                projectileScriptableObject,
+                ProjectileHandler.ProjectileTarget.Player
+            );
+            isShooter = false;
+        }
+
     }
     public Vector3 GetPosition() => transform.position;
     // Make Sure That the Parmemeter is Normalized First
@@ -41,11 +57,12 @@ public class EnemyMovement : MonoBehaviour {
         rigidbody.velocity = _desiredDirection * movementSpeed;
     }
 }
-public interface IPassivePathfindingType {
+[Serializable]
+public abstract class IPassivePathfindingType : MonoBehaviour {
     // Make Sure That you Return A Normalized Vector
     public abstract Vector2 Pathfind(Vector2 _currentPosition);
 }
-public interface IAggroPathfindingType {
+public abstract class IAggroPathfindingType : MonoBehaviour {
     // Make Sure That you Return A Normalized Vector
     public abstract Vector2 Pathfind(Vector2 _currentPosition);
 }

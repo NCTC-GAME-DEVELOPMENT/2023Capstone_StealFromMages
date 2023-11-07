@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
-public class RigidPatrolPathing : MonoBehaviour, IPassivePathfindingType {
+[Serializable]
+public class RigidPatrolPathing : IPassivePathfindingType {
     /* Todo:
      * Detection Radius 
      */
@@ -16,7 +17,7 @@ public class RigidPatrolPathing : MonoBehaviour, IPassivePathfindingType {
     private int index;
     private bool isWaiting;
     private float timeWaited;
-    public Vector2 Pathfind(Vector2 _currentPosition) {
+    public override Vector2 Pathfind(Vector2 _currentPosition) {
         if (isWaiting) {
             if (timeWaited < patrolPoints[index].WaitTime) {
                 timeWaited += Time.deltaTime;

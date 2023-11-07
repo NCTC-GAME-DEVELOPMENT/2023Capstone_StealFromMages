@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-public class TickSystem : IDisposable, ISingleton<TickSystem>, IInitialize {
+public class TickSystem : ISingleton<TickSystem>,IDisposable, IInitialize {
     private const short DEFAULT_TPS = 20;
     public static short TPS;//Ticks Per Second
     private static float TPSDecimal;
@@ -15,21 +15,21 @@ public class TickSystem : IDisposable, ISingleton<TickSystem>, IInitialize {
     public static TickSystem Instance {
         get; private set;
     }
-    public static void SubscribeToTickChange(Action<uint> subscriber) => TickChangeEvent += subscriber;
-    public static void UnSubscribeToTickChange(Action<uint> subscriber) => TickChangeEvent -= subscriber;
-    public void CreateTimer(TimerCallback _timerCallback, int _TimeInSeconds) => TimerList.Add(new TickTimer(_timerCallback, _TimeInSeconds));
-    public void CreateTimer(TimerCallback _timerCallback, uint _TimeInTicks) => TimerList.Add(new TickTimer(_timerCallback, _TimeInTicks));
+    public static void SubscribeToTickChange(Action<uint> _subscriber) => TickChangeEvent += _subscriber;
+    public static void UnSubscribeToTickChange(Action<uint> _subscriber) => TickChangeEvent -= _subscriber;
+    public void CreateTimer(TimerCallback _timerCallback, int _timeInSeconds) => TimerList.Add(new TickTimer(_timerCallback, _timeInSeconds));
+    public void CreateTimer(TimerCallback _timerCallback, uint _timeInTicks) => TimerList.Add(new TickTimer(_timerCallback, _timeInTicks));
     private class TickTimer {
         private readonly uint triggerTick;
         private TimerCallback timerCallback;
-        public TickTimer(TimerCallback _timerCallback, int _TimeInSeconds) {
+        public TickTimer(TimerCallback _timerCallback, int _timeInSeconds) {
             timerCallback = _timerCallback;
-            int apporximateTPS = _TimeInSeconds * TPS;
-            triggerTick = (uint)apporximateTPS;
+            int apporximateTPS = _timeInSeconds * TPS;
+            triggerTick = (uint)apporximateTPS + TickSystem.Instance.GetCurrentTick();
         }
-        public TickTimer(TimerCallback _timerCallback, uint _TimeInTicks) {
+        public TickTimer(TimerCallback _timerCallback, uint _timeInTicks) {
             timerCallback = _timerCallback;
-            triggerTick = TickSystem.Instance.GetCurrentTick() + _TimeInTicks;
+            triggerTick = TickSystem.Instance.GetCurrentTick() + _timeInTicks;
         }
         public bool CheckTick(uint tick) {
             if (tick < triggerTick)
@@ -52,16 +52,16 @@ public class TickSystem : IDisposable, ISingleton<TickSystem>, IInitialize {
         Dispose(true);
         GC.SuppressFinalize(this);
     }
-    protected virtual void Dispose(bool disposing) {
-        if (disposing) {
+    protected virtual void Dispose(bool _disposing) {
+        if (_disposing) {
             // Implement handling of Managed and Unmanaged Resources
         }
     }
-    private void CheckTimerList(uint tick) {
+    private void CheckTimerList(uint _tick) {
         List<TickTimer> timerList = new List<TickTimer>(TimerList);
         List<TickTimer> RemovalList = new List<TickTimer>();
         foreach (TickTimer tickTimer in timerList)
-            if (tickTimer.CheckTick(tick))
+            if (tickTimer.CheckTick(_tick))
                 RemovalList.Add(tickTimer);
         foreach (TickTimer tickTimer in RemovalList)
             TimerList.Remove(tickTimer);
