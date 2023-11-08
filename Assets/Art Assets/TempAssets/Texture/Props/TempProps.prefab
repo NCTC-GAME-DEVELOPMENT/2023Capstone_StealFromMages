@@ -2855,7 +2855,7 @@ GameObject:
   - component: {fileID: 8718157562056143012}
   - component: {fileID: 2569000148484736661}
   m_Layer: 0
-  m_Name: Props
+  m_Name: TempProps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
