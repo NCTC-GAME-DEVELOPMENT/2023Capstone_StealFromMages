@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IHealth {
     public void ApplyDamage(float _damage);
-    public void ApplyHeal(float _heal);
+    public bool ApplyHeal(float _heal);
 }

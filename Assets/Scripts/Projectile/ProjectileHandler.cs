@@ -9,7 +9,7 @@ public class ProjectileHandler : MonoBehaviourSingleton<ProjectileHandler> {
     private List<GameObject> activeProjectiles;
     [SerializeField]
     private GameObject normalProjectile;
-    void Awake() {
+    public override void Awake() {
         base.Awake();
         inactiveProjectiles = new List<GameObject>();
         activeProjectiles = new List<GameObject>();

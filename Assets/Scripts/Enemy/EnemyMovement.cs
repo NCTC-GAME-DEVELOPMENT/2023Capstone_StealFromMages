@@ -14,43 +14,23 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField]
     private IAggroPathfindingType aggroPathfinding;
     [SerializeField]
-    private float aggroDistance;
-    [SerializeField]
-    private bool isShooter;
-    [SerializeField]
-    private NormalProjectileScriptableObject projectileScriptableObject;
-    public float AggroDistance {
-        get => aggroDistance;
-    }
-    private bool isAggro = false;
-    void Start() {
-        IsPlayerInAggroDistance();
+    private EnemyMain enemyMain;    
+    void Start() {       
         passivePathfinding = GetComponent<IPassivePathfindingType>();
         aggroPathfinding = GetComponent<IAggroPathfindingType>();
+        enemyMain = GetComponent<EnemyMain>();
     }
 
     // Update is called once per frame
     void Update() {
         if (movementSpeed != 0)
             if (aggroPathfinding is not null)
-                Move(isAggro ? aggroPathfinding.Pathfind(transform.position) : passivePathfinding.Pathfind(transform.position));
-
-        // Need To Seperate isAggro into Main Mono that other Scripts can call
-        if (isAggro && isShooter && projectileScriptableObject is not null) {
-            ProjectileHandler.Instance.ShootProjectile(
-                GetPosition(),
-                (Pathfinder.Instance.GetPlayerPosition() - (Vector2)GetPosition()).normalized,
-                projectileScriptableObject,
-                ProjectileHandler.ProjectileTarget.Player
-            );
-            isShooter = false;
-        }
-
+                Move(enemyMain.IsAggro ? aggroPathfinding.Pathfind(transform.position) : passivePathfinding.Pathfind(transform.position));
     }
     public Vector3 GetPosition() => transform.position;
     // Make Sure That the Parmemeter is Normalized First
     public void IsPlayerInAggroDistance() {
-        isAggro = Vector2.Distance(Pathfinder.Instance.GetPlayerPosition(), transform.position) < AggroDistance;
+        enemyMain.IsAggro = Vector2.Distance(Pathfinder.Instance.GetPlayerPosition(), transform.position) < enemyMain.AggroDistance;
         TickSystem.Instance?.CreateTimer(IsPlayerInAggroDistance, (uint)10);
     }
     private void Move(Vector2 _desiredDirection) {
