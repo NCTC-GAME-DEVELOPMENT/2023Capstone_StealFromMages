@@ -102,8 +102,6 @@ MonoBehaviour:
   playerNumber: 0
   moveSpeed: 4
   triggerActAt: 0.9
-  rb: {fileID: 2019198981072504340}
-  animator: {fileID: 5708785856344221345}
 --- !u!50 &2019198981072504340
 Rigidbody2D:
   serializedVersion: 4
@@ -141,7 +139,7 @@ Animator:
   m_GameObject: {fileID: 7601510400204467613}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b4d8118890c70fe48a22cd5e9c49dd37, type: 2}
+  m_Controller: {fileID: 9100000, guid: d63c9f1c959dda14798274a882b942d4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
