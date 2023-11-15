@@ -6,14 +6,18 @@ public class PlayerController : MonoBehaviour
 {
     public int playerNumber = 1;
     public float moveSpeed = 4f;
-    public float triggerActAt = .9f; 
-    
+    public float triggerActAt = .9f;
+    [SerializeField]
+    private Collider2D collisionCollider;
+    [SerializeField]
+    private Collider2D HitBoxCollider;
     InputData input; 
     Rigidbody2D rb;
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        Physics2D.IgnoreCollision(HitBoxCollider, collisionCollider, true);
     }
 
     // Update is called once per frame
@@ -28,7 +32,7 @@ public class PlayerController : MonoBehaviour
         }
 
         MovePlayer(input.leftStick);
-        RotatePlayer(input.rightStick); 
+        //RotatePlayer(input.rightStick); 
 
         if (input.rightTrigger > triggerActAt)
         {
