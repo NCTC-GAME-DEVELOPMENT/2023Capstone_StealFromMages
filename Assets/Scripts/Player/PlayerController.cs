@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
         if (input.rightTrigger > triggerActAt)
         {
-            Debug.Log("Fire"); 
+            //Debug.Log("Fire"); 
         }    
         
     }

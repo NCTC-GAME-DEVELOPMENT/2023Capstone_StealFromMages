@@ -10,6 +10,7 @@ public class NormalProjectile : IProjectile {
     private Vector2 projectileDirAngle;
     private new Rigidbody2D rigidbody;
     private string[] targetTags;
+    private bool hasHit;
     private int projectileIndex;
     public bool IsActive = false;
     void Awake() {
@@ -26,6 +27,7 @@ public class NormalProjectile : IProjectile {
         projectileSpeed = _stats.Speed;
         projectileDamage = _stats.Damage;
         projectileIndex = _index;
+        hasHit = false;
         switch (_targetTag) {
             case ProjectileHandler.ProjectileTarget.Enemy:
                 targetTags = new string[] { "Enemy", "Enviroment" };
@@ -40,14 +42,19 @@ public class NormalProjectile : IProjectile {
         TickSystem.Instance.CreateTimer(Disable, (int)projectileLifetime);
         IsActive = true;
     }
-    void OnCollisionEnter2D(Collision2D _collision) {
+    private void OnTriggerEnter2D(Collider2D _collision) {
+        
+        Debug.Log(_collision);
         if (IsActive) {
             foreach (var tag in targetTags) {
                 if (_collision.gameObject.tag == tag) {
                     _collision.gameObject.GetComponent<IHealth>()?.ApplyDamage(projectileDamage);
+                    hasHit = true;
+                }
+            }
+            if(hasHit) {
                     Disable();
                     return;
-                }
             }
         }
     }

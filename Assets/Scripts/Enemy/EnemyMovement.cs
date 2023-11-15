@@ -29,10 +29,6 @@ public class EnemyMovement : MonoBehaviour {
     }
     public Vector3 GetPosition() => transform.position;
     // Make Sure That the Parmemeter is Normalized First
-    public void IsPlayerInAggroDistance() {
-        enemyMain.IsAggro = Vector2.Distance(Pathfinder.Instance.GetPlayerPosition(), transform.position) < enemyMain.AggroDistance;
-        TickSystem.Instance?.CreateTimer(IsPlayerInAggroDistance, (uint)10);
-    }
     private void Move(Vector2 _desiredDirection) {
         rigidbody.velocity = _desiredDirection * movementSpeed;
     }
