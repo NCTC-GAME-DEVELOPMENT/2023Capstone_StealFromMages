@@ -34,7 +34,8 @@ public class TickSystem : ISingleton<TickSystem>,IDisposable, IInitialize {
         public bool CheckTick(uint tick) {
             if (tick < triggerTick)
                 return false;
-            timerCallback();
+            if(timerCallback != null)
+                timerCallback();
             return true;
         }
 
@@ -62,9 +63,9 @@ public class TickSystem : ISingleton<TickSystem>,IDisposable, IInitialize {
         List<TickTimer> RemovalList = new List<TickTimer>();
         foreach (TickTimer tickTimer in timerList)
             if (tickTimer.CheckTick(_tick))
-                RemovalList.Add(tickTimer);
+                RemovalList?.Add(tickTimer);
         foreach (TickTimer tickTimer in RemovalList)
-            TimerList.Remove(tickTimer);
+            TimerList?.Remove(tickTimer);
     }
     public void InitializeMain() {
         if (TimerList == null)

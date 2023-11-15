@@ -10,33 +10,32 @@ using UnityEngine.InputSystem;
 // Multiple Gamepads requires much more code! 
 
 
-public class InputPoller : MonoBehaviour
-{
-    public static InputPoller reference; 
+public class InputPoller : MonoBehaviour {
+    public static InputPoller reference;
 
-    void Awake()
-    {
-        if (reference != null)
-        {
+    void Awake() {
+        if (reference != null) {
             // we have another instance of this system. 
             // the Solution here is to delete the other version 
-            Debug.LogWarning("Found another instance of InputPoller on " + reference.name); 
-            Destroy(reference); 
+            Debug.LogWarning("Found another instance of InputPoller on " + reference.name);
+            Destroy(reference);
         }
         reference = this;
         //DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+
     }
 
-    public InputData GetInput(int PlayerNumber)
-    {
-        if (PlayerNumber == 0) { return GetInputP0(); }
-        if (PlayerNumber == 1) { return GetInputP1(); }
+    public InputData GetInput(int PlayerNumber) {
+        if (PlayerNumber == 0) {
+            return GetInputP0();
+        }
+        if (PlayerNumber == 1) {
+            return GetInputP1();
+        }
 
         // Defaut return 
         return InputData.CleanDataStruct();
@@ -44,21 +43,30 @@ public class InputPoller : MonoBehaviour
     }
 
     // this is the Keyboard and Mouse Info
-    public InputData GetInputP0()
-    {
+    public InputData GetInputP0() {
         InputData input = InputData.CleanDataStruct();
 
-        Keyboard kb = Keyboard.current; 
+        Keyboard kb = Keyboard.current;
         Mouse mouse = Mouse.current;
         // Verifiy we have Keyboard data 
-        if ( (kb != null) && (mouse != null) ) 
-        {
-            if (kb.wKey.isPressed) { input.leftStick.y = 1;  }
-            if (kb.sKey.isPressed) { input.leftStick.y = -1; }
-            if (kb.aKey.isPressed) { input.leftStick.x = -1; }
-            if (kb.dKey.isPressed) { input.leftStick.x = 1; }
+        if ((kb != null) && (mouse != null)) {
+            if (kb.wKey.isPressed) {
+                input.leftStick.y = 1;
+            }
+            if (kb.sKey.isPressed) {
+                input.leftStick.y = -1;
+            }
+            if (kb.aKey.isPressed) {
+                input.leftStick.x = -1;
+            }
+            if (kb.dKey.isPressed) {
+                input.leftStick.x = 1;
+            }
+            if (mouse.leftButton.isPressed) {
+                input.rightTrigger = 1f;
+            }
 
-            input.rightStick = mouse.position.value; 
+            input.rightStick = mouse.position.value;
 
         }
 
@@ -67,14 +75,12 @@ public class InputPoller : MonoBehaviour
     }
 
     // This is the First GamePad Connected Info
-    public InputData GetInputP1()
-    {
+    public InputData GetInputP1() {
         InputData input = InputData.CleanDataStruct();
 
         Gamepad gpad = Gamepad.current;
         // verify we have gamepad data
-        if (gpad != null)
-        {
+        if (gpad != null) {
             input.leftStick = gpad.leftStick.ReadValue();
             input.rightStick = gpad.rightStick.ReadValue();
             input.dpad = gpad.dpad.ReadValue();
@@ -92,7 +98,7 @@ public class InputPoller : MonoBehaviour
             input.selectButton = gpad.selectButton.wasPressedThisFrame;
         }
 
-        return input; 
+        return input;
     }
 
 
