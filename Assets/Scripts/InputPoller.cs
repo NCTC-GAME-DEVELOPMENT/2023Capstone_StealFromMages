@@ -65,6 +65,12 @@ public class InputPoller : MonoBehaviour {
             if (mouse.leftButton.isPressed) {
                 input.rightTrigger = 1f;
             }
+            if (kb.digit1Key.isPressed) {
+                input.buttonWest = true;
+            }
+            if (kb.digit2Key.isPressed) {
+                input.buttonEast = true;
+            }
 
             input.rightStick = mouse.position.value;
 

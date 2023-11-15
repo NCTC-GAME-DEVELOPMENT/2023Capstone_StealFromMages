@@ -6,12 +6,12 @@ using static UnityEngine.GraphicsBuffer;
 public class PlayerWeapon : MonoBehaviour
 {
     [SerializeField]
+    private readonly WeaponScriptableObject basicWeapon;
+    [SerializeField]
     private PlayerMana playerMana;
     InputData input;
     [SerializeField]
-    private GameObject lightProjectile;
-    [SerializeField]
-    private GameObject heavyProjectile;
+    private List<WeaponScriptableObject> weapons;
     [SerializeField]
     private float triggerActAt = .9f;
     [SerializeField]
@@ -20,14 +20,30 @@ public class PlayerWeapon : MonoBehaviour
     private uint castCooldown;
     [SerializeField]
     private bool isOnCooldown;
+    private int weaponSlot = -1;
     void Start()
     {
+        weapons = new List<WeaponScriptableObject>();
+        if (basicWeapon != null) {
+            weapons.Add(basicWeapon);
+            weaponSlot = 0;
+        }
         if (playerMana == null)
             playerMana = GetComponent<PlayerMana>();
     }
     void Update()
     {
         input = InputPoller.reference.GetInput(0);
+        if (input.buttonEast) {
+            if (++weaponSlot !< weapons.Count) {
+                weaponSlot--;
+            } if (weaponSlot !> -1) {
+                weaponSlot = 0;
+            }
+        }
+        else if (input.buttonWest){
+
+        }
         if (input.rightTrigger > triggerActAt && playerMana.UseMana() && isOnCooldown) {
             Vector2 relative = transform.InverseTransformPoint(Camera.main.ScreenToWorldPoint(new Vector3(input.rightStick.x, input.rightStick.y, 1)));
             Debug.Log(relative);
@@ -40,4 +56,5 @@ public class PlayerWeapon : MonoBehaviour
     public void ResetCooldown() {
         isOnCooldown = true;
     }
+
 }
