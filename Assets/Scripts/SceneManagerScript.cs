@@ -12,10 +12,33 @@ public class SceneManagerScript : MonoBehaviour
         Application.Quit();
     }
 
+    public void LoadTitleScreen()
+    {
+        Debug.Log("Load TItle Screen");
+        SceneManager.LoadScene("TitleScreen");
+    }
+
+    public void LoadEndScreen()
+    {
+        Debug.Log("Load End Screen");
+        SceneManager.LoadScene("EndScreen");
+    }
+
     public void LoadLevelOne()
     {
         Debug.Log("Load Level One");
         SceneManager.LoadScene("LevelOne");
     }
 
+    public void LoadLevelTwo()
+    {
+        Debug.Log("Load Level Two");
+        SceneManager.LoadScene("LevelTwo");
+    }
+
+    public void LoadLevelThree()
+    {
+        Debug.Log("Load Level Three");
+        SceneManager.LoadScene("LevelThree");
+    }
 }
