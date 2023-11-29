@@ -344,6 +344,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeBrawlerVariant1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1197287171261288987, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27332926
@@ -485,6 +489,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4279002988024577770, guid: 9c7e2b4a000d7f642936d64f4b7367c3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279002988024577770, guid: 9c7e2b4a000d7f642936d64f4b7367c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.65
       objectReference: {fileID: 0}
@@ -546,6 +554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Handler
       objectReference: {fileID: 0}
+    - target: {fileID: 4677433124907160246, guid: e7aacd19d532f7b48b2bfa22c1b8ca95, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1149373529}
     - target: {fileID: 8753112195039549223, guid: e7aacd19d532f7b48b2bfa22c1b8ca95, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -61336,6 +61348,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115162246}
   m_CullTransparentMesh: 1
+--- !u!1 &1149373529 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3994647040895512136, guid: 9c7e2b4a000d7f642936d64f4b7367c3, type: 3}
+  m_PrefabInstance: {fileID: 908519561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1149373531 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6860188843565462950, guid: 9c7e2b4a000d7f642936d64f4b7367c3, type: 3}
@@ -61347,23 +61364,27 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1672685641}
     m_Modifications:
     - target: {fileID: 1197287171261288987, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_Name
       value: SlimeBrawlerVariant1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1197287171261288987, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.1216865
+      value: 8.112946
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.8959293
+      value: 2.449858
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.566
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalRotation.w
@@ -61371,15 +61392,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -61794,6 +61815,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeBrawlerVariant1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1197287171261288987, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.116
@@ -61878,6 +61903,8 @@ Transform:
   - {fileID: 226222798}
   - {fileID: 117149620}
   - {fileID: 199490030}
+  - {fileID: 1982493860}
+  - {fileID: 1797587570}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1690418603
@@ -61891,6 +61918,10 @@ PrefabInstance:
     - target: {fileID: 1197287171261288987, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_Name
       value: SlimeBrawlerVariant1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197287171261288987, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62018,23 +62049,27 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1672685641}
     m_Modifications:
     - target: {fileID: 1197287171261288987, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_Name
       value: SlimeBrawlerVariant1
       objectReference: {fileID: 0}
+    - target: {fileID: 1197287171261288987, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.0047197
+      value: 10.995979
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.8431065
+      value: -0.6029649
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.566
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalRotation.w
@@ -62042,15 +62077,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -66738,6 +66773,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!4 &1797587570 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
+  m_PrefabInstance: {fileID: 1170711067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1826102946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66749,6 +66789,10 @@ PrefabInstance:
     - target: {fileID: 1197287171261288987, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_Name
       value: SlimeBrawlerVariant1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197287171261288987, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -66811,6 +66855,10 @@ PrefabInstance:
     - target: {fileID: 1197287171261288987, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_Name
       value: SlimeBrawlerVariant1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197287171261288987, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -67007,6 +67055,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943311992}
   m_CullTransparentMesh: 1
+--- !u!4 &1982493860 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7072888764484161466, guid: 3aaef854d69f91a469efea9ccd7bcd14, type: 3}
+  m_PrefabInstance: {fileID: 1772805929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1989262337
 GameObject:
   m_ObjectHideFlags: 0
@@ -87913,6 +87966,4 @@ SceneRoots:
   - {fileID: 1018307883}
   - {fileID: 1644125252}
   - {fileID: 4729282166141319910}
-  - {fileID: 1772805929}
-  - {fileID: 1170711067}
   - {fileID: 908519561}
