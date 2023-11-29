@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f303790ead1c89940b62e03b728f5b4a
+guid: 7fb6f8b684c32114fac1195663418c93
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,7 +149,196 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tilemap Vertical Fence_0
+      name: Slime Death Red sry i mesed up_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f269f5bbbb625c148bfa4bba57d8d05e
+      internalID: -524883531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death Red sry i mesed up_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bed5823e8061594fb9c7937ae251268
+      internalID: -1956493433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death Red sry i mesed up_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85649bc9e0fc1d7409c439181e6a3f15
+      internalID: 1406899063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death Red sry i mesed up_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e828f71fa0e936a4c9d3af956912a392
+      internalID: 1397765830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death Red sry i mesed up_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8210b5987e8d32a44a54f53a3fd54b5c
+      internalID: -144139480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death Red sry i mesed up_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c012aa3cfa52904b982228a8e7d6df2
+      internalID: -1034000197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death Red sry i mesed up_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a3777388e6b71479b9435c89fe99a6
+      internalID: -191673269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death Red sry i mesed up_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac223fce4bbf4644b8aa2035b26c6276
+      internalID: 390084826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death Red sry i mesed up_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c95272566581da049851d822c1781e8e
+      internalID: 546248483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death Red sry i mesed up_9
       rect:
         serializedVersion: 2
         x: 0
@@ -163,35 +352,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb98b294624b0ac48835c046ef90c537
-      internalID: 12367766
+      spriteID: c28556b0b494477439531b536ca9dc37
+      internalID: 1273727998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap Vertical Fence_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c90f880329799f4389b7a6de170ec13
-      internalID: 371786154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tilemap Vertical Fence_2
+      name: Slime Death Red sry i mesed up_10
       rect:
         serializedVersion: 2
         x: 64
@@ -205,14 +373,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fa59f30cb0b56a47a6606b103f3da67
-      internalID: 140657228
+      spriteID: c0b0aeae55efa304aa7831afc5f8be15
+      internalID: -1184213425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap Vertical Fence_3
+      name: Slime Death Red sry i mesed up_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba73d1a4ba485d24ea41fd9614cb950a
+      internalID: -370643949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death Red sry i mesed up_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a1bd9a94b7e9a48a6bf38da1036f61
+      internalID: 285770421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death Red sry i mesed up_13
       rect:
         serializedVersion: 2
         x: 0
@@ -226,14 +436,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd82e53a86ac7894391c262bb0745a28
-      internalID: -1186282633
+      spriteID: ae45a2fee1dfb414c8426fc5afecc0a1
+      internalID: 2058479290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap Vertical Fence_4
+      name: Slime Death Red sry i mesed up_14
       rect:
         serializedVersion: 2
         x: 32
@@ -247,29 +457,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9aa39e934b483541ac07c5923da10b3
-      internalID: 1099553413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tilemap Vertical Fence_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6f9ac577566e674e9d8665cb573a0ee
-      internalID: 1170463081
+      spriteID: ab81dace2cdcadb4fa9460a6a76178f5
+      internalID: 112446761
       vertices: []
       indices: 
       edges: []
@@ -285,12 +474,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tilemap Vertical Fence_0: 12367766
-      Tilemap Vertical Fence_1: 371786154
-      Tilemap Vertical Fence_2: 140657228
-      Tilemap Vertical Fence_3: -1186282633
-      Tilemap Vertical Fence_4: 1099553413
-      Tilemap Vertical Fence_5: 1170463081
+      Slime Death Red sry i mesed up_0: -524883531
+      Slime Death Red sry i mesed up_1: -1956493433
+      Slime Death Red sry i mesed up_10: -1184213425
+      Slime Death Red sry i mesed up_11: -370643949
+      Slime Death Red sry i mesed up_12: 285770421
+      Slime Death Red sry i mesed up_13: 2058479290
+      Slime Death Red sry i mesed up_14: 112446761
+      Slime Death Red sry i mesed up_2: 1406899063
+      Slime Death Red sry i mesed up_3: 1397765830
+      Slime Death Red sry i mesed up_4: -144139480
+      Slime Death Red sry i mesed up_5: -1034000197
+      Slime Death Red sry i mesed up_6: -191673269
+      Slime Death Red sry i mesed up_7: 390084826
+      Slime Death Red sry i mesed up_8: 546248483
+      Slime Death Red sry i mesed up_9: 1273727998
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
