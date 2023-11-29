@@ -9,6 +9,16 @@ public class PlayerHealth : MonoBehaviour, IHealth {
     [SerializeField]
     private float maxHealth;
     public event Action<GameObject> OnDeathCallback;
+
+    //Animator public var (drag animator already attached to player to this field in editor)
+    public Animator animator;
+
+    void Update()
+    {
+        //if player is dead, play death anim
+        animator.SetFloat("Health", health);
+    }
+
     void Start() {
         
     }
