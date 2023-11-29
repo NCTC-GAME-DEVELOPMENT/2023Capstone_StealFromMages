@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Tilemap Vertical Fence_2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -701645080, guid: 247b3dbf09758ba4d99c4c01122399ed, type: 3}
+  m_Sprite: {fileID: 140657228, guid: f303790ead1c89940b62e03b728f5b4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

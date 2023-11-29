@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 247b3dbf09758ba4d99c4c01122399ed
+guid: f303790ead1c89940b62e03b728f5b4a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -163,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9d34b1b377864646b111dcef1ef5ab1
-      internalID: -1002697791
+      spriteID: eb98b294624b0ac48835c046ef90c537
+      internalID: 12367766
       vertices: []
       indices: 
       edges: []
@@ -184,14 +184,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cb4ad93fb45ee246b6a8c2a89120348
-      internalID: 328751304
+      spriteID: 0c90f880329799f4389b7a6de170ec13
+      internalID: 371786154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: Tilemap Vertical Fence_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa59f30cb0b56a47a6606b103f3da67
+      internalID: 140657228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap Vertical Fence_3
       rect:
         serializedVersion: 2
         x: 0
@@ -205,14 +226,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 524aceefb0cd90845883feab3d5b202a
-      internalID: -701645080
+      spriteID: fd82e53a86ac7894391c262bb0745a28
+      internalID: -1186282633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap Vertical Fence_3
+      name: Tilemap Vertical Fence_4
       rect:
         serializedVersion: 2
         x: 32
@@ -226,8 +247,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c6203812bee6af4099b8da4c12b77e4
-      internalID: -1928000400
+      spriteID: d9aa39e934b483541ac07c5923da10b3
+      internalID: 1099553413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap Vertical Fence_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6f9ac577566e674e9d8665cb573a0ee
+      internalID: 1170463081
       vertices: []
       indices: 
       edges: []
@@ -243,10 +285,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tilemap Vertical Fence_0: -1002697791
-      Tilemap Vertical Fence_1: 328751304
-      Tilemap Vertical Fence_2: -701645080
-      Tilemap Vertical Fence_3: -1928000400
+      Tilemap Vertical Fence_0: 12367766
+      Tilemap Vertical Fence_1: 371786154
+      Tilemap Vertical Fence_2: 140657228
+      Tilemap Vertical Fence_3: -1186282633
+      Tilemap Vertical Fence_4: 1099553413
+      Tilemap Vertical Fence_5: 1170463081
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
