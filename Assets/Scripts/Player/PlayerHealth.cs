@@ -12,15 +12,24 @@ public class PlayerHealth : MonoBehaviour, IHealth {
 
     //Animator public var (drag animator already attached to player to this field in editor)
     public Animator animator;
+    private float currentHealth;
 
     void Update()
     {
         //if player is dead, play death anim
         animator.SetFloat("Health", health);
+
+        if (health < currentHealth)
+        {
+            //animator.SetTrigger("tookDamage");
+            //currentHealth = health;
+        }
     }
 
-    void Start() {
-        
+    void Start()
+    {
+        animator = gameObject.GetComponent<Animator>();
+        currentHealth = health;
     }
     public float GetHealthFill() {
         return health / maxHealth;
