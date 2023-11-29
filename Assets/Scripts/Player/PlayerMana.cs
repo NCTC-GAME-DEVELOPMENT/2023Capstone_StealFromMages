@@ -37,8 +37,9 @@ public class PlayerMana : MonoBehaviour
         }
     }
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag == "ManaPotion") {
+        if (collision.tag == "ManaPotion" && mana != maxMana) {
             RegenMana(10);
+            collision.gameObject.SetActive(false);
         }
     }
 

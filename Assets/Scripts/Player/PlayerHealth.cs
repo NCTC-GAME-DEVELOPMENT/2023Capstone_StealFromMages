@@ -32,8 +32,9 @@ public class PlayerHealth : MonoBehaviour, IHealth {
         return false;
     }
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag == "HealthPotion") {
+        if (collision.tag == "HealthPotion" && health != maxHealth) {
             ApplyHeal(10);
+            collision.gameObject.SetActive(false);
         }
     }
 }

@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63145bd4d74da8499fe94c0fea619ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxMana: 10
+  maxMana: 10
   mana: 10
 --- !u!1 &4878621951445407910
 GameObject:
