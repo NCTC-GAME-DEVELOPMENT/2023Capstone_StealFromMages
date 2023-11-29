@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerMana : MonoBehaviour
 {
     [SerializeField]
-    private int MaxMana;
+    private int maxMana;
     [SerializeField]
     private int mana;
+
     public void Start() {
         TickSystem.Instance.CreateTimer(PassiveRegen, (int)2);
     }
@@ -21,6 +22,9 @@ public class PlayerMana : MonoBehaviour
             return false; 
         }
     }
+    public float GetManaFill() {
+    return mana / maxMana;
+    }
     public void PassiveRegen() {
         RegenMana(1);
         TickSystem.Instance.CreateTimer(PassiveRegen, (int)2);
@@ -28,8 +32,13 @@ public class PlayerMana : MonoBehaviour
     public void RegenMana(int _amount) {
 
         mana += _amount;
-        if (mana > MaxMana) {
-            mana = MaxMana;
+        if (mana > maxMana) {
+            mana = maxMana;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.tag == "ManaPotion") {
+            RegenMana(10);
         }
     }
 

@@ -12,6 +12,9 @@ public class PlayerHealth : MonoBehaviour, IHealth {
     void Start() {
         
     }
+    public float GetHealthFill() {
+        return health / maxHealth;
+    }
     public float GetHealth() => health;
     public void ApplyDamage(float _damage) {
         health -= _damage;
@@ -27,5 +30,10 @@ public class PlayerHealth : MonoBehaviour, IHealth {
             return true;
         }
         return false;
+    }
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.tag == "HealthPotion") {
+            ApplyHeal(10);
+        }
     }
 }
