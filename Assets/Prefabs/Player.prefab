@@ -333,6 +333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63145bd4d74da8499fe94c0fea619ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxMana: 10
+  mana: 10
 --- !u!1 &4878621951445407910
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,9 +380,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMana: {fileID: 4376734464629371275}
-  lightProjectile: {fileID: 666330665622773991, guid: a41117c05eac5274abb8556ce3b73711, type: 3}
-  heavyProjectile: {fileID: 666330665622773991, guid: a41117c05eac5274abb8556ce3b73711, type: 3}
+  weapons:
+  - {fileID: 11400000, guid: 8676bc2194c334447894002187470446, type: 2}
+  - {fileID: 11400000, guid: 758bbb102b9ade547a6a69e67a0cf2ba, type: 2}
   triggerActAt: 0.9
   TempProjectile: {fileID: 11400000, guid: 67afab65faa432b40a27cacd942ff77d, type: 2}
   castCooldown: 10
   isOnCooldown: 1
+  weaponSlot: -1

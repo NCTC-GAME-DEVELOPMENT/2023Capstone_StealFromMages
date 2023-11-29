@@ -42,6 +42,27 @@ public class NormalProjectile : IProjectile {
         TickSystem.Instance.CreateTimer(Disable, (int)projectileLifetime);
         IsActive = true;
     }
+    public void Initialize(Vector2 _dirAngle, WeaponScriptableObject _stats, ProjectileHandler.ProjectileTarget _targetTag, int _index) {
+        targetTags = null;
+        projectileDirAngle = _dirAngle;
+        projectileSpeed = _stats.Speed;
+        projectileDamage = _stats.Damage;
+        projectileIndex = _index;
+        hasHit = false;
+        switch (_targetTag) {
+            case ProjectileHandler.ProjectileTarget.Enemy:
+                targetTags = new string[] { "Enemy", "Enviroment" };
+                break;
+            case ProjectileHandler.ProjectileTarget.Player:
+                targetTags = new string[] { "Player", "Enviroment" };
+                break;
+            case ProjectileHandler.ProjectileTarget.All:
+                targetTags = new string[] { "Enemy", "Player", "Enviroment" };
+                break;
+        }
+        TickSystem.Instance.CreateTimer(Disable, (int)projectileLifetime);
+        IsActive = true;
+    }
     private void OnTriggerEnter2D(Collider2D _collision) {
         
         Debug.Log(_collision);
