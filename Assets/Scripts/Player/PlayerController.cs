@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Animator public var (drag animator already attached to player to this field in editor)
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
+    //WIP
+    public bool isFacingLeft;
+
     public int playerNumber = 1;
     public float moveSpeed = 4f;
     public float triggerActAt = .9f;
@@ -18,6 +24,9 @@ public class PlayerController : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         Physics2D.IgnoreCollision(HitBoxCollider, collisionCollider, true);
+
+        animator = gameObject.GetComponent<Animator>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -37,8 +46,25 @@ public class PlayerController : MonoBehaviour
         if (input.rightTrigger > triggerActAt)
         {
             //Debug.Log("Fire"); 
-        }    
-        
+        }
+
+        //if player is moving (speed greater than 0.1), play movement anim
+        animator.SetFloat("Speed", rb.velocity.magnitude);
+        if (rb.velocity.x < 0)
+        {
+            //moving right
+            spriteRenderer.flipX = false;
+            //WIP
+            isFacingLeft = false;
+        }
+        else
+        {
+            //moving left
+            spriteRenderer.flipX = true;
+            //WIP
+            isFacingLeft = true;
+        }
+
     }
 
     void KBMConversions()

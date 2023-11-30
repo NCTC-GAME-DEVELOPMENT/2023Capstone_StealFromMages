@@ -65,10 +65,10 @@ public class InputPoller : MonoBehaviour {
             if (mouse.leftButton.isPressed) {
                 input.rightTrigger = 1f;
             }
-            if (kb.digit1Key.isPressed) {
+            if (Input.GetKeyDown(KeyCode.Q)) {
                 input.buttonWest = true;
             }
-            if (kb.digit2Key.isPressed) {
+            if (Input.GetKeyDown(KeyCode.E)) {
                 input.buttonEast = true;
             }
 

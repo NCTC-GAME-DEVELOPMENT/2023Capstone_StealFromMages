@@ -20,14 +20,11 @@ public class PlayerWeapon : MonoBehaviour
     private uint castCooldown;
     [SerializeField]
     private bool isOnCooldown;
+    [SerializeField]
     private int weaponSlot = -1;
     void Start()
-    {
-        weapons = new List<WeaponScriptableObject>();
-        if (basicWeapon != null) {
-            weapons.Add(basicWeapon);
-            weaponSlot = 0;
-        }
+    {       
+            weaponSlot = 0;   
         if (playerMana == null)
             playerMana = GetComponent<PlayerMana>();
     }
@@ -35,19 +32,23 @@ public class PlayerWeapon : MonoBehaviour
     {
         input = InputPoller.reference.GetInput(0);
         if (input.buttonEast) {
-            if (++weaponSlot !< weapons.Count) {
-                weaponSlot--;
-            } if (weaponSlot !> -1) {
+            weaponSlot += 1;
+            if (weaponSlot >= weapons.Count) {
+                Debug.Log("Action");
                 weaponSlot = 0;
             }
         }
         else if (input.buttonWest){
+            weaponSlot -= 1;
+             if (weaponSlot < 0) {
+                weaponSlot = weapons.Count - 1;
+             }
 
         }
-        if (input.rightTrigger > triggerActAt && playerMana.UseMana() && isOnCooldown) {
+        if (input.rightTrigger > triggerActAt && isOnCooldown && playerMana.UseMana(weapons[weaponSlot].Cost)) {
             Vector2 relative = transform.InverseTransformPoint(Camera.main.ScreenToWorldPoint(new Vector3(input.rightStick.x, input.rightStick.y, 1)));
             Debug.Log(relative);
-            ProjectileHandler.Instance.ShootProjectile(this.transform.position, relative.normalized, TempProjectile, ProjectileHandler.ProjectileTarget.Enemy);
+            ProjectileHandler.Instance.ShootProjectile(this.transform.position, relative.normalized, weapons[weaponSlot], ProjectileHandler.ProjectileTarget.Enemy);
             TickSystem.Instance.CreateTimer(ResetCooldown, castCooldown);
             isOnCooldown = false;
         }

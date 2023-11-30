@@ -29,6 +29,21 @@ public class ProjectileHandler : MonoBehaviourSingleton<ProjectileHandler> {
         activeProjectiles.Add(projectile);
 
     }
+    public void ShootProjectile(Vector3 _origin, Vector2 _dirAngle, WeaponScriptableObject _stats, ProjectileTarget _targetTag = ProjectileTarget.All) {
+        GameObject projectile;
+        if (inactiveProjectiles.Count <= 0)
+            projectile = GameObject.Instantiate(normalProjectile, transform);
+        else {
+            projectile = inactiveProjectiles[inactiveProjectiles.Count - 1];
+            inactiveProjectiles.RemoveAt(inactiveProjectiles.Count - 1);
+            projectile.SetActive(true);
+        }
+        projectile.transform.position = _origin;
+        projectile.GetComponent<SpriteRenderer>().sprite = _stats.Sprite;
+        projectile.AddComponent<NormalProjectile>().Initialize(_dirAngle, _stats, _targetTag, activeProjectiles.Count);
+        activeProjectiles.Add(projectile);
+
+    }
     public void RemoveProjectile(GameObject _object) {
         Destroy(_object.gameObject.GetComponent<IProjectile>());
         _object.gameObject.SetActive(false);

@@ -14,11 +14,19 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField]
     private IAggroPathfindingType aggroPathfinding;
     [SerializeField]
-    private EnemyMain enemyMain;    
+    private EnemyMain enemyMain;
+
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
+
+
     void Start() {       
         passivePathfinding = GetComponent<IPassivePathfindingType>();
         aggroPathfinding = GetComponent<IAggroPathfindingType>();
         enemyMain = GetComponent<EnemyMain>();
+
+        animator = gameObject.GetComponent<Animator>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -26,6 +34,26 @@ public class EnemyMovement : MonoBehaviour {
         if (movementSpeed != 0)
             if (aggroPathfinding is not null)
                 Move(enemyMain.IsAggro ? aggroPathfinding.Pathfind(transform.position) : passivePathfinding.Pathfind(transform.position));
+
+
+        //if player is moving (speed greater than 0.1), play movement anim
+        animator.SetFloat("Speed", rigidbody.velocity.magnitude);
+        if (rigidbody.velocity.x < 0)
+        {
+            //moving right
+            spriteRenderer.flipX = false;
+            //WIP
+            //isFacingLeft = false;
+        }
+        else
+        {
+            //moving left
+            spriteRenderer.flipX = true;
+            //WIP
+            //isFacingLeft = true;
+        }
+
+
     }
     public Vector3 GetPosition() => transform.position;
     // Make Sure That the Parmemeter is Normalized First
