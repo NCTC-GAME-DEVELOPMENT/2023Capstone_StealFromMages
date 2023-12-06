@@ -10,15 +10,13 @@ public class EnemyHealth : MonoBehaviour, IHealth {
     [SerializeField]
     private EnemyMain enemyMain;
 
-    //Animator public var (drag animator already attached to player to this field in editor)
+    //Animator public var 
     public Animator animator;
 
     void Update()
     {
-        //if enemy is dead, play death anim
-        if (animator != null) {
+        //connect actual health to health param for animator: checks health and plays death anim
         animator.SetFloat("Health", health);
-        }
     }
     void Start () {
     enemyMain = GetComponent<EnemyMain>();
@@ -32,9 +30,24 @@ public class EnemyHealth : MonoBehaviour, IHealth {
             Debug.Log("Enemy has Perished");
             enemyMain.OnDeath();
         }
+        else
+        {
+            //hurt anim
+            animator.SetTrigger("TookDamage");
+            //get out of hurt anim
+            StartCoroutine(ReturnToDefaultStateAfterDelay(0.5f));
+        }
     }
     
     public bool ApplyHeal(float _heal) {
         return false;
     }
+
+    //get animation from hurt back to run/idle
+    IEnumerator ReturnToDefaultStateAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        animator.SetTrigger("ReturnToDefault");
+    }
+
 }
