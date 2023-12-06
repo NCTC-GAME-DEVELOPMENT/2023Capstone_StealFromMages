@@ -19,6 +19,12 @@ public class EnemyMovement : MonoBehaviour {
     public Animator animator;
     public SpriteRenderer spriteRenderer;
 
+    //audio
+    public AudioClip slimeMove;
+    private AudioSource audioSource;
+    [SerializeField]
+    private float soundRange;
+
 
     void Start() {       
         passivePathfinding = GetComponent<IPassivePathfindingType>();
@@ -27,6 +33,9 @@ public class EnemyMovement : MonoBehaviour {
 
         animator = gameObject.GetComponent<Animator>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        //assign audio source
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,17 +51,16 @@ public class EnemyMovement : MonoBehaviour {
         {
             //moving right
             spriteRenderer.flipX = false;
-            //WIP
-            //isFacingLeft = false;
         }
         else
         {
             //moving left
             spriteRenderer.flipX = true;
-            //WIP
-            //isFacingLeft = true;
         }
-
+        if (IsPlayerInRange())
+        {
+            PlaySound();
+        }
 
     }
     public Vector3 GetPosition() => transform.position;
@@ -60,6 +68,33 @@ public class EnemyMovement : MonoBehaviour {
     private void Move(Vector2 _desiredDirection) {
         rigidbody.velocity = _desiredDirection * movementSpeed;
     }
+
+    // Check if the player is in range
+    private bool IsPlayerInRange()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player != null)
+        {
+            float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+            return distanceToPlayer <= soundRange;
+        }
+
+        return false;
+    }
+
+    // Play the sound with pitch adjustment
+    private void PlaySound()
+    {
+        if (!audioSource.isPlaying)
+        {
+            //set pitch to match movement
+            audioSource.pitch = 0.75f;
+            audioSource.PlayOneShot(slimeMove);
+        }
+    }
+
+
 }
 [Serializable]
 public abstract class IPassivePathfindingType : MonoBehaviour {

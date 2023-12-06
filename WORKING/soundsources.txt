@@ -1,0 +1,20 @@
+sound sources
+
+hurt slime
+https://freesound.org/people/mrickey13/sounds/515621/
+
+slime move
+https://freesound.org/people/FairCashew/sounds/686363/
+
+slime death
+https://freesound.org/people/Breviceps/sounds/445117/
+
+background music
+https://freesound.org/people/Seth_Makes_Sounds/sounds/683835/
+https://freesound.org/people/Geoff-Bremner-Audio/sounds/697844/
+
+player shoot
+https://freesound.org/people/EminYILDIRIM/sounds/541480/
+
+player takes damage
+https://freesound.org/people/braqoon/sounds/161098/

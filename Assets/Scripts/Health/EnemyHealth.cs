@@ -13,6 +13,12 @@ public class EnemyHealth : MonoBehaviour, IHealth {
     //Animator public var 
     public Animator animator;
 
+
+    //audio
+    public AudioClip slimeDamage;
+    public AudioClip slimeDeath;
+    private AudioSource audioSource;
+
     void Update()
     {
         //connect actual health to health param for animator: checks health and plays death anim
@@ -21,12 +27,16 @@ public class EnemyHealth : MonoBehaviour, IHealth {
     }
     void Start () {
     enemyMain = GetComponent<EnemyMain>();
+        //assign audio source
+        audioSource = GetComponent<AudioSource>();
     }
     public float GetHealth() => health;
     public void ApplyDamage(float _damage) {
         Debug.Log(_damage + " Damage");
+        audioSource.PlayOneShot(slimeDamage);
         health -= _damage;
         if (health < 0) {
+            audioSource.PlayOneShot(slimeDeath);
             OnDeathCallback?.Invoke(gameObject);
             Debug.Log("Enemy has Perished");
             enemyMain.OnDeath();

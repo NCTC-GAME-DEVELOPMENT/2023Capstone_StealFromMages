@@ -14,6 +14,10 @@ public class PlayerHealth : MonoBehaviour, IHealth {
     public Animator animator;
     private float currentHealth;
 
+    //audio
+    public AudioClip playerDamage;
+    public AudioSource audioSource;
+
     void Update()
     {
         //connect actual health to health param for animator: checks health and plays death anim
@@ -24,6 +28,9 @@ public class PlayerHealth : MonoBehaviour, IHealth {
     {
         animator = gameObject.GetComponent<Animator>();
         currentHealth = health;
+
+        //assign audio source
+        audioSource = GetComponent<AudioSource>();
     }
     public float GetHealthFill() {
         return health / maxHealth;
@@ -31,6 +38,7 @@ public class PlayerHealth : MonoBehaviour, IHealth {
     public float GetHealth() => health;
     public void ApplyDamage(float _damage) {
         health -= _damage;
+        audioSource.PlayOneShot(playerDamage);
         if (health < 0) {
             OnDeathCallback?.Invoke(gameObject);
         }
@@ -39,7 +47,7 @@ public class PlayerHealth : MonoBehaviour, IHealth {
             //hurt anim
             animator.SetTrigger("tookDamage");
             //get out of hurt anim
-            StartCoroutine(ReturnToDefaultStateAfterDelay(1.0f));
+            StartCoroutine(ReturnToDefaultStateAfterDelay(0.7f));
         }
     }
     public bool ApplyHeal(float _heal) {

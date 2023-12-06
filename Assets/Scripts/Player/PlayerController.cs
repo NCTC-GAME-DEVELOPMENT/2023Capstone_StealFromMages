@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
     InputData input; 
     Rigidbody2D rb;
 
+    //audio
+    public AudioClip footSteps;
+    public AudioSource audioSource;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -25,6 +29,9 @@ public class PlayerController : MonoBehaviour
 
         animator = gameObject.GetComponent<Animator>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        //assign audio source
+        //audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -60,7 +67,10 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = true;
 
         }
-
+        if (rb.velocity.magnitude > 0)
+        {
+            //audioSource.PlayOneShot(footSteps);
+        }
     }
 
     void KBMConversions()
