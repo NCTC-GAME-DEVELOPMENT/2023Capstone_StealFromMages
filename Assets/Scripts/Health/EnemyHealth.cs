@@ -16,6 +16,7 @@ public class EnemyHealth : MonoBehaviour, IHealth {
     void Update()
     {
         //connect actual health to health param for animator: checks health and plays death anim
+        if(animator != null)
         animator.SetFloat("Health", health);
     }
     void Start () {

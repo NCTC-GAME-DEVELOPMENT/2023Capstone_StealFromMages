@@ -27,7 +27,7 @@ public class MegaLaserScript : MonoBehaviour
     }
     public void Shoot(int _petalsAlive) {
         petalsAlive = _petalsAlive;
-        RaycastHit2D hit = Physics2D.Raycast(this.gameObject.transform.position, (Pathfinder.Instance.GetPlayerPosition() - (Vector2)transform.position).normalized, 100, 6);
+        RaycastHit2D hit = Physics2D.Linecast(parent.position, Pathfinder.Instance.GetPlayerPosition(),layerMask);
         Debug.Log("Distance : " + hit.distance);
         Vector3 vector = Pathfinder.Instance.GetPlayerPosition() - (Vector2)transform.position;
         Debug.Log(Vector2.Angle((Vector2)parent.position, Pathfinder.Instance.GetPlayerPosition()));
@@ -37,8 +37,8 @@ public class MegaLaserScript : MonoBehaviour
         if (hit.collider != null) {
             Debug.Log("Hit this : " + hit.collider.name);   
             
-            transform.localPosition = new Vector3(hit.distance / -2, -2);
-            transform.localScale = new Vector2(hit.distance, .3f);
+            transform.localPosition = new Vector3(hit.distance / -2, 0f, -2);
+            transform.localScale = new Vector3(hit.distance, .3f, 1);
             TickSystem.Instance.CreateTimer(StopShooting, 2);
         }
         else {

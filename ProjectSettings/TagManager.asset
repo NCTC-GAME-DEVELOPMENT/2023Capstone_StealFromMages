@@ -8,6 +8,7 @@ TagManager:
   - HealthPotion
   - ManaPotion
   - LevelThreeWall
+  - Terrain
   layers:
   - Default
   - TransparentFX
