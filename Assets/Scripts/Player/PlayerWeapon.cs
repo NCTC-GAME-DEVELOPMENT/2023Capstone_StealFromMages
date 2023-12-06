@@ -22,11 +22,19 @@ public class PlayerWeapon : MonoBehaviour
     private bool isOnCooldown;
     [SerializeField]
     private int weaponSlot = -1;
+
+    //audio
+    public AudioClip attack1;
+    private AudioSource audioSource;
+
     void Start()
     {       
             weaponSlot = 0;   
         if (playerMana == null)
             playerMana = GetComponent<PlayerMana>();
+
+        //assign audio source
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -51,6 +59,8 @@ public class PlayerWeapon : MonoBehaviour
             ProjectileHandler.Instance.ShootProjectile(this.transform.position, relative.normalized, weapons[weaponSlot], ProjectileHandler.ProjectileTarget.Enemy);
             TickSystem.Instance.CreateTimer(ResetCooldown, castCooldown);
             isOnCooldown = false;
+            //play sound
+            audioSource.PlayOneShot(attack1);
         }
         //float angle = Mathf.Atan2(relative.x, relative.z) * Mathf.Rad2Deg;
     }
