@@ -21,6 +21,8 @@ public class FlowerBossShooting : MonoBehaviour
     private float megaChargeTime;
     private float megaChargeStart;
     private float megaCharge;
+    [SerializeField]
+    private MegaLaserScript MegaLaser;
     public void Start() {
         attackPhase = AttackPhase.Individual;
         TickSystem.Instance.CreateTimer(ChooseAttackPhase, (int)10);
@@ -72,9 +74,14 @@ public class FlowerBossShooting : MonoBehaviour
                     megaChargeStart += Time.deltaTime;
                     //Possible Bug if lag occurs before this frame
                     megaCharge = megaChargeStart / megaChargeTime;
-                    if (megaCharge > 1) {
+                    if (megaCharge > 2) {
+                        MegaLaser.Shoot(petalTransforms.Count);
                         Debug.Log("Mega Laser");
                         IsMegaOffCooldown = false;
+                        IsOffCooldown = false;
+                        TickSystem.Instance.CreateTimer(SwitchCoolDown, 3);
+                        TickSystem.Instance.CreateTimer(SwitchLaserCoolDown, 12);
+                        ChooseAttackPhase();
                     }
                     break;
             }
@@ -83,12 +90,16 @@ public class FlowerBossShooting : MonoBehaviour
     public void SwitchCoolDown() {
         IsOffCooldown = true;
     }
+    public void SwitchLaserCoolDown() {
+        IsMegaOffCooldown = true;
+    }
     public void ChooseAttackPhase() {
         if (!IsMegaOffCooldown) {
             attackPhase = (AttackPhase)Random.Range(0, 2);
         }
         else {
-            attackPhase = (AttackPhase)Random.Range(0, 3);
+
+            attackPhase = Random.Range(0,1) == 1 ? (AttackPhase)Random.Range(0, 2) : (AttackPhase)3;
         }
         TickSystem.Instance.CreateTimer(ChooseAttackPhase, Random.Range(8, 16));
     }
