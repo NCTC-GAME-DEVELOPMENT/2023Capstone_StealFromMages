@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -403.69992, y: 183.5}
+  m_AnchoredPosition: {x: -403.69995, y: 183.5}
   m_SizeDelta: {x: -845.47, y: -459.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &143703772
@@ -341,7 +341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -403.69992, y: 147}
+  m_AnchoredPosition: {x: -403.69995, y: 147}
   m_SizeDelta: {x: -845.47, y: -459.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &219643421
@@ -416,7 +416,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -285.69992, y: 220.6}
+  m_AnchoredPosition: {x: -285.69995, y: 220.6}
   m_SizeDelta: {x: -845.47, y: -459.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &340263247
@@ -61517,7 +61517,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -364.19992, y: 220.6}
+  m_AnchoredPosition: {x: -364.19995, y: 220.6}
   m_SizeDelta: {x: -845.47, y: -459.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1115162248
@@ -61607,7 +61607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -325.19992, y: 220.6}
+  m_AnchoredPosition: {x: -325.19995, y: 220.6}
   m_SizeDelta: {x: -845.47, y: -459.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1326651346
@@ -61702,7 +61702,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -364.80002, y: 183.5}
+  m_AnchoredPosition: {x: -364.80005, y: 183.5}
   m_SizeDelta: {x: -845.47, y: -459.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1595966482
@@ -62007,7 +62007,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -406.80002, y: 220.6}
+  m_AnchoredPosition: {x: -406.80005, y: 220.6}
   m_SizeDelta: {x: -845.47, y: -459.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1653691704
@@ -62181,7 +62181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -324.60007, y: 183.5}
+  m_AnchoredPosition: {x: -324.6001, y: 183.5}
   m_SizeDelta: {x: -845.47, y: -459.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1769068677
@@ -67001,7 +67001,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -246.69992, y: 220.6}
+  m_AnchoredPosition: {x: -246.69995, y: 220.6}
   m_SizeDelta: {x: -845.47, y: -459.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1939499647
@@ -67076,7 +67076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -246.80002, y: 183.5}
+  m_AnchoredPosition: {x: -246.80005, y: 183.5}
   m_SizeDelta: {x: -845.47, y: -459.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1943311994
@@ -67151,7 +67151,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -285.10007, y: 183.5}
+  m_AnchoredPosition: {x: -285.1001, y: 183.5}
   m_SizeDelta: {x: -845.47, y: -459.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989262339
@@ -87959,6 +87959,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 612351632661403541, guid: 2fbbc81dd8b7385449105363f2ebcd1e, type: 3}
+      propertyPath: sceneIndexNumber
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7192913054256643206, guid: 2fbbc81dd8b7385449105363f2ebcd1e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.16
