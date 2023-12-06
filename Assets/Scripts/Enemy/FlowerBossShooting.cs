@@ -77,7 +77,6 @@ public class FlowerBossShooting : MonoBehaviour
                         IsMegaOffCooldown = false;
                     }
                     break;
-                // Add a ShootFunction inside Petals that a timer just calls and have the petals forward data
             }
         }
     }

@@ -65,7 +65,7 @@ public class NormalProjectile : IProjectile {
     }
     private void OnTriggerEnter2D(Collider2D _collision) {
         
-        Debug.Log(_collision);
+        Debug.Log(_collision.name);
         if (IsActive) {
             foreach (var tag in targetTags) {
                 if (_collision.gameObject.tag == tag) {

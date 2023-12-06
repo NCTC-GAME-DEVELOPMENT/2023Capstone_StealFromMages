@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class FlowerBossPetalShooter : MonoBehaviour
 {
+    [SerializeField]
+    NormalProjectileScriptableObject attackStats;
     public void Shoot() {
-        Debug.Log(this.gameObject.name + " Shoots");
+        Debug.Log("Shooty Boss");
+        ProjectileHandler.Instance.ShootProjectile(transform.position, (Pathfinder.Instance.GetPlayerPosition() - (Vector2)transform.position).normalized, attackStats, ProjectileHandler.ProjectileTarget.Player);
     }
 }
