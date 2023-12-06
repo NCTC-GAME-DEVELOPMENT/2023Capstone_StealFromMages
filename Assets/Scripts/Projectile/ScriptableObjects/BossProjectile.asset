@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a70d534428f3d49982de30671fa5a8, type: 3}
+  m_Name: BossProjectile
+  m_EditorClassIdentifier: 
+  Speed: 3
+  Damage: 4
+  Sprite: {fileID: 1175410029, guid: 41c8f234b3079a747afaf4cb088007ee, type: 3}
