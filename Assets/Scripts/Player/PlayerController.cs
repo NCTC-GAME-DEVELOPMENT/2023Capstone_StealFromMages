@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //Animator public var (drag animator already attached to player to this field in editor)
+    //Animator public var
     public Animator animator;
     public SpriteRenderer spriteRenderer;
-    //WIP
-    public bool isFacingLeft;
 
     public int playerNumber = 1;
     public float moveSpeed = 4f;
@@ -54,15 +52,13 @@ public class PlayerController : MonoBehaviour
         {
             //moving right
             spriteRenderer.flipX = false;
-            //WIP
-            isFacingLeft = false;
+
         }
         else
         {
             //moving left
             spriteRenderer.flipX = true;
-            //WIP
-            isFacingLeft = true;
+
         }
 
     }

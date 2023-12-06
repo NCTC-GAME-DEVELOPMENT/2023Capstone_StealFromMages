@@ -10,20 +10,14 @@ public class PlayerHealth : MonoBehaviour, IHealth {
     private float maxHealth;
     public event Action<GameObject> OnDeathCallback;
 
-    //Animator public var (drag animator already attached to player to this field in editor)
+    //Animator public var 
     public Animator animator;
     private float currentHealth;
 
     void Update()
     {
-        //if player is dead, play death anim
+        //connect actual health to health param for animator: checks health and plays death anim
         animator.SetFloat("Health", health);
-
-        if (health < currentHealth)
-        {
-            //animator.SetTrigger("tookDamage");
-            //currentHealth = health;
-        }
     }
 
     void Start()
@@ -39,6 +33,13 @@ public class PlayerHealth : MonoBehaviour, IHealth {
         health -= _damage;
         if (health < 0) {
             OnDeathCallback?.Invoke(gameObject);
+        }
+        else
+        {
+            //hurt anim
+            animator.SetTrigger("tookDamage");
+            //get out of hurt anim
+            StartCoroutine(ReturnToDefaultStateAfterDelay(1.0f));
         }
     }
     public bool ApplyHeal(float _heal) {
@@ -56,4 +57,13 @@ public class PlayerHealth : MonoBehaviour, IHealth {
             collision.gameObject.SetActive(false);
         }
     }
+
+
+    //get animation from hurt back to run/idle
+    IEnumerator ReturnToDefaultStateAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        animator.SetTrigger("ReturnToDefault");
+    }
+
 }
