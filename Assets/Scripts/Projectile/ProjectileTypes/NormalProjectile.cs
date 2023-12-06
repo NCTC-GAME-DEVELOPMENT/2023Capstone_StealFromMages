@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -30,13 +31,13 @@ public class NormalProjectile : IProjectile {
         hasHit = false;
         switch (_targetTag) {
             case ProjectileHandler.ProjectileTarget.Enemy:
-                targetTags = new string[] { "Enemy", "Enviroment" };
+                targetTags = new string[] { "Enemy", "Terrain" };
                 break;
             case ProjectileHandler.ProjectileTarget.Player:
-                targetTags = new string[] { "Player", "Enviroment" };
+                targetTags = new string[] { "Player", "Terrain" };
                 break;
             case ProjectileHandler.ProjectileTarget.All:
-                targetTags = new string[] { "Enemy", "Player", "Enviroment" };
+                targetTags = new string[] { "Enemy", "Player", "Terrain" };
                 break;
         }
         TickSystem.Instance.CreateTimer(Disable, (int)projectileLifetime);
@@ -51,13 +52,13 @@ public class NormalProjectile : IProjectile {
         hasHit = false;
         switch (_targetTag) {
             case ProjectileHandler.ProjectileTarget.Enemy:
-                targetTags = new string[] { "Enemy", "Enviroment" };
+                targetTags = new string[] { "Enemy", "Terrain" };
                 break;
             case ProjectileHandler.ProjectileTarget.Player:
-                targetTags = new string[] { "Player", "Enviroment" };
+                targetTags = new string[] { "Player", "Terrain" };
                 break;
             case ProjectileHandler.ProjectileTarget.All:
-                targetTags = new string[] { "Enemy", "Player", "Enviroment" };
+                targetTags = new string[] { "Enemy", "Player", "Terrain" };
                 break;
         }
         TickSystem.Instance.CreateTimer(Disable, (int)projectileLifetime);
@@ -67,6 +68,10 @@ public class NormalProjectile : IProjectile {
         
         Debug.Log(_collision.name);
         if (IsActive) {
+            if (_collision.gameObject.tag == "Terrain") {
+                Disable();
+                return;
+            }
             foreach (var tag in targetTags) {
                 if (_collision.gameObject.tag == tag) {
                     _collision.gameObject.GetComponent<IHealth>()?.ApplyDamage(projectileDamage);
