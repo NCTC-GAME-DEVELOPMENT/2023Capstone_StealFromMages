@@ -37,7 +37,7 @@ public class VineGate : MonoBehaviour
             {
                 IsDone = true;
                 OnStartBossFight.Invoke();
-                PlayerHintManager.instance.ShowMessage("Flower Power Time!", 3f, .5f, Color.green);
+                PlayerHintManager.instance.ShowMessage("No Mana", 1f, .25f, Color.red);
             }
         }
 
