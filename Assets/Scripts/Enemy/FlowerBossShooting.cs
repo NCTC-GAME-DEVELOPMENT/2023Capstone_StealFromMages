@@ -9,6 +9,7 @@ using UnityEngine.WSA;
  */
 public class FlowerBossShooting : MonoBehaviour
 {
+    #region Fields and Properties
     [SerializeField]
     private List<GameObject> petalTransforms;
     [SerializeField]
@@ -26,6 +27,7 @@ public class FlowerBossShooting : MonoBehaviour
     [SerializeField]
     private VineGate vineGate;
     private bool isAggro;
+    #endregion
     public void Start() {
         attackPhase = AttackPhase.Individual;
         isAggro = false;
@@ -33,9 +35,6 @@ public class FlowerBossShooting : MonoBehaviour
             vineGate.OnStartFight += TurnAggro;
         else 
             TurnAggro();
-        /* Gotta make Sure Boss Gets Aggro'd Before it starts Shooting
-         * 
-         */
     }
     public void TurnAggro() {
         if (!isAggro) {
@@ -44,11 +43,9 @@ public class FlowerBossShooting : MonoBehaviour
             isAggro = true;
             TickSystem.Instance.CreateTimer(SwitchLaserCoolDown, 20);
         }
+    }
+    public float GetMegaCharge() => megaCharge; 
 
-    }
-    public float GetMegaCharge() {
-        return megaCharge; 
-    }
     public void Update() {
         if (IsOffCooldown) {
             int TotalAttackTime = 0;
@@ -59,7 +56,6 @@ public class FlowerBossShooting : MonoBehaviour
                         TickSystem.Instance.CreateTimer(petalTransforms[i].GetComponent<FlowerBossPetalShooter>().Shoot, 1+ i*2);
                     }
                     TotalAttackTime = 1 + petalTransforms.Count * 2;
-                    Debug.Log("Attack Cooldown : " + TotalAttackTime + " for Attack Type : " + attackPhase);
                     TickSystem.Instance.CreateTimer(SwitchCoolDown, TotalAttackTime + 2);
                     break;
                 case AttackPhase.Group:
@@ -68,7 +64,6 @@ public class FlowerBossShooting : MonoBehaviour
                         petalTransforms[i].GetComponent<FlowerBossPetalShooter>().Shoot();
                     }
                     TotalAttackTime = petalTransforms.Count;
-                    Debug.Log("Attack Cooldown : " + TotalAttackTime + " for Attack Type : " + attackPhase);
                     TickSystem.Instance.CreateTimer(SwitchCoolDown, TotalAttackTime + 2);
                     break;
                 case AttackPhase.Individual:
@@ -82,12 +77,10 @@ public class FlowerBossShooting : MonoBehaviour
                             }
                         }
                     }
-                    Debug.Log("Attack Cooldown : " + TotalAttackTime +" for Attack Type : " + attackPhase);
                     TickSystem.Instance.CreateTimer(SwitchCoolDown, TotalAttackTime + 2);
                     break;
                 case AttackPhase.Mega:
                     megaChargeStart += Time.deltaTime;
-                    //Possible Bug if lag occurs before this frame
                     megaCharge = megaChargeStart / megaChargeTime;
                     if (megaCharge > 2) {
                         MegaLaser.Shoot(petalTransforms.Count);
@@ -118,7 +111,6 @@ public class FlowerBossShooting : MonoBehaviour
         }
         TickSystem.Instance.CreateTimer(ChooseAttackPhase, Random.Range(8, 16));
     }
-
     public enum AttackPhase {
         Cyclic,
         Group,
