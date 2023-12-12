@@ -28,6 +28,7 @@ public class FlowerPetalHealth : MonoBehaviour, IHealth
             OnDeathCallback?.Invoke(gameObject);
             Debug.Log("Petal has Perished");
             gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            gameObject.SetActive(false);
         }
     }
 
