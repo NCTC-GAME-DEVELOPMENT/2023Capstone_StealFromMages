@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour, IHealth {
     [SerializeField]
     private float maxHealth;
     public event Action<GameObject> OnDeathCallback;
+    public event Action OnPlayerHealthUpdate;
 
     //Animator public var 
     public Animator animator;
@@ -36,9 +37,11 @@ public class PlayerHealth : MonoBehaviour, IHealth {
         return health / maxHealth;
     }
     public float GetHealth() => health;
+    public float GetMaxHealth() => maxHealth;
     public void ApplyDamage(float _damage) {
         health -= _damage;
         audioSource.PlayOneShot(playerDamage);
+        OnPlayerHealthUpdate?.Invoke();
         if (health < 0) {
             OnDeathCallback?.Invoke(gameObject);
         }
@@ -48,9 +51,11 @@ public class PlayerHealth : MonoBehaviour, IHealth {
             animator.SetTrigger("tookDamage");
             //get out of hurt anim
             StartCoroutine(ReturnToDefaultStateAfterDelay(0.7f));
+
         }
     }
     public bool ApplyHeal(float _heal) {
+        OnPlayerHealthUpdate?.Invoke();
         if (health < maxHealth) {
             health += _heal;
             if (health > maxHealth)

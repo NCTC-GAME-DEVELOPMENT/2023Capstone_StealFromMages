@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class PlayerMana : MonoBehaviour
     private int maxMana;
     [SerializeField]
     private int mana;
+    public event Action OnManaUpdate;
 
     public void Start() {
         TickSystem.Instance.CreateTimer(PassiveRegen, (int)2);
@@ -16,12 +18,15 @@ public class PlayerMana : MonoBehaviour
         Debug.Log(_cost);
         if (mana - _cost > -1) {
             mana -= _cost;
+            OnManaUpdate?.Invoke();
             return true;
         }
         else {
             return false; 
         }
     }
+    public int GetMana() => mana;
+    public int GetMaxMana() => maxMana;
     public float GetManaFill() {
     return mana / maxMana;
     }
@@ -30,7 +35,7 @@ public class PlayerMana : MonoBehaviour
         TickSystem.Instance.CreateTimer(PassiveRegen, (int)2);
     }
     public void RegenMana(int _amount) {
-
+        OnManaUpdate?.Invoke();
         mana += _amount;
         if (mana > maxMana) {
             mana = maxMana;
