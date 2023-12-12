@@ -39,6 +39,7 @@ public class PlayerHealth : MonoBehaviour, IHealth {
     public float GetHealth() => health;
     public float GetMaxHealth() => maxHealth;
     public void ApplyDamage(float _damage) {
+        Debug.Log("Took Damage");
         health -= _damage;
         audioSource.PlayOneShot(playerDamage);
         OnPlayerHealthUpdate?.Invoke();

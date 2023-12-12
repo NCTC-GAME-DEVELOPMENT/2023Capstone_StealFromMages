@@ -33,10 +33,10 @@ public class MegaLaserScript : MonoBehaviour
         Debug.Log(Vector2.Angle((Vector2)parent.position, Pathfinder.Instance.GetPlayerPosition()));
         float angle = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg - rotationModifier;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+        collider.enabled = true;
         parent.rotation = q;
         if (hit.collider != null) {
             Debug.Log("Hit this : " + hit.collider.name);   
-            
             transform.localPosition = new Vector3(hit.distance / -2, 0f, -2);
             transform.localScale = new Vector3(hit.distance, .3f, 1);
             TickSystem.Instance.CreateTimer(StopShooting, 2);
@@ -55,10 +55,10 @@ public class MegaLaserScript : MonoBehaviour
         transform.localPosition = new Vector2(0, 0f);
         transform.localScale = new Vector2(0, 0f);
     }
-    private void OnCollisionStay(Collision collision) {
+    private void OnTriggerStay2D(Collider2D collision) {
         if (!hasHitRecently && collision.gameObject.tag == "Player") {
             hasHitRecently = true;
-            collision.gameObject.GetComponent<IHealth>().ApplyDamage(petalsAlive);
+            collision.GetComponent<IHealth>().ApplyDamage(petalsAlive);
         }
         if (!didWallHit && collision.gameObject.layer == 6) {
             didWallHit= true;

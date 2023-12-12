@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Collections;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -65,8 +66,6 @@ public class NormalProjectile : IProjectile {
         IsActive = true;
     }
     private void OnTriggerEnter2D(Collider2D _collision) {
-        
-        Debug.Log(_collision.name);
         if (IsActive) {
             if (_collision.gameObject.tag == "Terrain") {
                 Disable();

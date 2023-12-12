@@ -23,13 +23,27 @@ public class FlowerBossShooting : MonoBehaviour
     private float megaCharge;
     [SerializeField]
     private MegaLaserScript MegaLaser;
+    [SerializeField]
+    private VineGate vineGate;
+    private bool isAggro;
     public void Start() {
         attackPhase = AttackPhase.Individual;
-        TickSystem.Instance.CreateTimer(ChooseAttackPhase, (int)10);
-        IsOffCooldown = true;
+        isAggro = false;
+        if (vineGate != null )
+            vineGate.OnStartFight += TurnAggro;
+        else 
+            TurnAggro();
         /* Gotta make Sure Boss Gets Aggro'd Before it starts Shooting
          * 
          */
+    }
+    public void TurnAggro() {
+        if (!isAggro) {
+            TickSystem.Instance.CreateTimer(ChooseAttackPhase, (int)10);
+            IsOffCooldown = true;
+            isAggro = true;
+        }
+
     }
     public float GetMegaCharge() {
         return megaCharge; 

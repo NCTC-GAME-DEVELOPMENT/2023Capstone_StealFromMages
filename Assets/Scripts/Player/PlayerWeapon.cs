@@ -42,7 +42,6 @@ public class PlayerWeapon : MonoBehaviour
         if (input.buttonEast) {
             weaponSlot += 1;
             if (weaponSlot >= weapons.Count) {
-                Debug.Log("Action");
                 weaponSlot = 0;
             }
         }
@@ -55,7 +54,6 @@ public class PlayerWeapon : MonoBehaviour
         }
         if (input.rightTrigger > triggerActAt && isOnCooldown && playerMana.UseMana(weapons[weaponSlot].Cost)) {
             Vector2 relative = transform.InverseTransformPoint(Camera.main.ScreenToWorldPoint(new Vector3(input.rightStick.x, input.rightStick.y, 1)));
-            Debug.Log(relative);
             ProjectileHandler.Instance.ShootProjectile(this.transform.position, relative.normalized, weapons[weaponSlot], ProjectileHandler.ProjectileTarget.Enemy);
             TickSystem.Instance.CreateTimer(ResetCooldown, castCooldown);
             isOnCooldown = false;

@@ -22,6 +22,7 @@ public class PlayerMana : MonoBehaviour
             return true;
         }
         else {
+            PlayerHintManager.instance.ShowMessage("No Mana!", 1f, .25f, Color.blue);
             return false; 
         }
     }
@@ -32,7 +33,7 @@ public class PlayerMana : MonoBehaviour
     }
     public void PassiveRegen() {
         RegenMana(1);
-        TickSystem.Instance.CreateTimer(PassiveRegen, (int)2);
+        TickSystem.Instance.CreateTimer(PassiveRegen, (int)1);
     }
     public void RegenMana(int _amount) {
         OnManaUpdate?.Invoke();

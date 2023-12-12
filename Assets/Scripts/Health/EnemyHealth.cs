@@ -35,7 +35,7 @@ public class EnemyHealth : MonoBehaviour, IHealth {
         Debug.Log(_damage + " Damage");
         audioSource.PlayOneShot(slimeDamage);
         health -= _damage;
-        if (health < 0) {
+        if (health < .1) {
             audioSource.PlayOneShot(slimeDeath);
             OnDeathCallback?.Invoke(gameObject);
             Debug.Log("Enemy has Perished");

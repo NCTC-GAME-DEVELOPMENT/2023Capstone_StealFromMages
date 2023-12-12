@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,8 @@ public class VineGate : MonoBehaviour
 
     public List<GameObject> VineList;
     int vineIndex = 0;
-    public UnityEvent OnStartBossFight; 
+    public UnityEvent OnStartBossFight;
+    public event Action OnStartFight;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,8 @@ public class VineGate : MonoBehaviour
             {
                 IsDone = true;
                 OnStartBossFight.Invoke();
-                PlayerHintManager.instance.ShowMessage("No Mana", 1f, .25f, Color.red);
+                OnStartFight?.Invoke();
+                PlayerHintManager.instance.ShowMessage("What is that!?!?", 1f, .25f, Color.red);
             }
         }
 
