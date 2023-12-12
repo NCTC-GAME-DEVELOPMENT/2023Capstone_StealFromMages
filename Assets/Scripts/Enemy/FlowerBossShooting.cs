@@ -42,6 +42,7 @@ public class FlowerBossShooting : MonoBehaviour
             TickSystem.Instance.CreateTimer(ChooseAttackPhase, (int)10);
             IsOffCooldown = true;
             isAggro = true;
+            TickSystem.Instance.CreateTimer(SwitchLaserCoolDown, 20);
         }
 
     }

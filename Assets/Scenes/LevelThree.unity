@@ -55550,6 +55550,10 @@ PrefabInstance:
       propertyPath: vineGate
       value: 
       objectReference: {fileID: 336940659}
+    - target: {fileID: 6033594113704898378, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
+      propertyPath: IsMegaOffCooldown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7062752366816676227, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.137
@@ -56067,7 +56071,7 @@ GameObject:
   - component: {fileID: 1152292181}
   m_Layer: 6
   m_Name: CollisionTileMap
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
