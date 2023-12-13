@@ -55542,9 +55542,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4287501311075966801, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5196806245751476384, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
       propertyPath: rotationModifier
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612837170778987425, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612837170778987425, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759620206531722368, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6033594113704898378, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
       propertyPath: vineGate
@@ -55552,6 +55568,10 @@ PrefabInstance:
       objectReference: {fileID: 336940659}
     - target: {fileID: 6033594113704898378, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
       propertyPath: IsMegaOffCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706472156303622081, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7062752366816676227, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
@@ -55598,10 +55618,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlowerBoss
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2054221636756181622, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7464462997202107958, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1894941603}
   m_SourcePrefab: {fileID: 100100000, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
 --- !u!1 &810382928
 GameObject:
@@ -58302,6 +58326,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b59d0494258a23468ce74c5cc97614b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1456173839 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4967325207605887726, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
+  m_PrefabInstance: {fileID: 670312632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98265c641b7244445a9dfdeca4b6668f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1469640704
 GameObject:
   m_ObjectHideFlags: 0
@@ -58900,6 +58935,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1894941601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7464462997202107958, guid: 03cd96d232d76df40b791dbddc713f9f, type: 3}
+  m_PrefabInstance: {fileID: 670312632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1894941603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894941601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39f61d629c97af48837170e0fc81a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flowerBoss: {fileID: 1456173839}
 --- !u!1 &1909318711
 GameObject:
   m_ObjectHideFlags: 0
@@ -59226,6 +59279,10 @@ PrefabInstance:
     - target: {fileID: 2789265092688759465, guid: 9c7e2b4a000d7f642936d64f4b7367c3, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789265092688759465, guid: 9c7e2b4a000d7f642936d64f4b7367c3, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3431357143164931249, guid: 9c7e2b4a000d7f642936d64f4b7367c3, type: 3}
       propertyPath: m_FlipX

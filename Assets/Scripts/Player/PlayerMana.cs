@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMana : MonoBehaviour
 {
@@ -13,7 +14,14 @@ public class PlayerMana : MonoBehaviour
 
     public void Start() {
         TickSystem.Instance.CreateTimer(PassiveRegen, (int)2);
+        //SceneManager.sceneLoaded += OnSceneLoad;
     }
+
+    private void OnSceneLoad(Scene arg0, LoadSceneMode arg1) {
+        RegenMana(1);
+        TickSystem.Instance.CreateTimer(PassiveRegen, (int)1);
+    }
+
     public bool UseMana(int _cost) {
         Debug.Log(_cost);
         if (mana - _cost > -1) {

@@ -53,6 +53,7 @@ public class TickSystem : ISingleton<TickSystem>,IDisposable, IInitialize {
 
     public uint GetCurrentTick() => currentTick;
     public void Dispose() {
+        Instance = null;
         Dispose(true);
         GC.SuppressFinalize(this);
     }

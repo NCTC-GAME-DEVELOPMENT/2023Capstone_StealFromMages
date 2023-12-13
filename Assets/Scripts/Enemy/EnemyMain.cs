@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class EnemyMain : MonoBehaviour {
     [SerializeField]
     private bool RecentHit;
     private bool HasDied;
+    public event Action OnDeathEvent;
     void Start() {
         IsAggro = false;
         IsPlayerInAggroDistance();
@@ -27,6 +29,7 @@ public class EnemyMain : MonoBehaviour {
     public void OnDeath() {
         HasDied = true;
         TickSystem.Instance?.CreateTimer(DestroyEnemy, (uint)11);
+        OnDeathEvent?.Invoke();
     }
     public void IsPlayerInAggroDistance() {
         if (!HasDied) {

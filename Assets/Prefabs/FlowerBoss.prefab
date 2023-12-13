@@ -1194,6 +1194,7 @@ GameObject:
   - component: {fileID: 6033594113704898378}
   - component: {fileID: 3702161414247430106}
   - component: {fileID: 8348043403393231600}
+  - component: {fileID: 2054221636756181622}
   m_Layer: 7
   m_Name: FlowerCenter
   m_TagString: Enemy
@@ -1247,9 +1248,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc12b9e03d880c4bbfb56f23eef85b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 1
   enemyMain: {fileID: 4967325207605887726}
   animator: {fileID: 0}
+  slimeDamage: {fileID: 0}
+  slimeDeath: {fileID: 0}
 --- !u!114 &6033594113704898378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1273,6 +1276,7 @@ MonoBehaviour:
   IsOffCooldown: 0
   megaChargeTime: 0
   MegaLaser: {fileID: 5196806245751476384}
+  vineGate: {fileID: 0}
 --- !u!212 &3702161414247430106
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1354,12 +1358,25 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &2054221636756181622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6281530147095578750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39f61d629c97af48837170e0fc81a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flowerBoss: {fileID: 4967325207605887726}
 --- !u!1 &6706472156303622081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,7 +1389,7 @@ GameObject:
   - component: {fileID: 5612837170778987425}
   - component: {fileID: 5196806245751476384}
   - component: {fileID: 5759620206531722368}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: MegaLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1401,7 +1418,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6706472156303622081}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1459,6 +1476,7 @@ MonoBehaviour:
     m_Bits: 64
   petalsAlive: 0
   parent: {fileID: 2208461515868166582}
+  rotationModifier: 0
 --- !u!212 &5759620206531722368
 SpriteRenderer:
   m_ObjectHideFlags: 0

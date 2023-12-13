@@ -12,11 +12,17 @@ public class GameHandler : MonoBehaviourSingleton<GameHandler>
     public override void Awake() {
         isPersistent = true;
         base.Awake();
+    }
+    public void Start() {
         tickSystem = new TickSystem(
             // Will Implement In Time
             );
         tickSystem.InitializeMain();
 
+    
+    }
+    public void OnDestroy() {
+        tickSystem.Dispose();
     }
     public void FixedUpdate() { 
         tickSystem.ProgressTick();

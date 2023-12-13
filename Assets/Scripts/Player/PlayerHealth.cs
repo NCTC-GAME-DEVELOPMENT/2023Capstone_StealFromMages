@@ -45,11 +45,11 @@ public class PlayerHealth : MonoBehaviour, IHealth {
         health -= _damage;
         audioSource.PlayOneShot(playerDamage);
         OnPlayerHealthUpdate?.Invoke();
-        if (health < .1) {
+        if (health < .0001) {
             OnDeathCallback?.Invoke(gameObject);
+            StartCoroutine(OnDeath());
             Pathfinder.Instance.gameObject.SetActive(false);
             gameObject.GetComponent<PlayerController>().moveSpeed = 0;
-            TickSystem.Instance.CreateTimer(OnDeath, 2);
         }
         else
         {
@@ -78,8 +78,12 @@ public class PlayerHealth : MonoBehaviour, IHealth {
         }
     }
 
-    private void OnDeath() {
+    private IEnumerator OnDeath() {
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(7);
+        SceneManager.UnloadSceneAsync(3);
+        SceneManager.UnloadSceneAsync(5);
+        Destroy(Pathfinder.Instance.gameObject);
     }
 
 

@@ -28,6 +28,7 @@ public class SceneManagerScript : MonoBehaviour
     {
         Debug.Log("Load Level One");
         SceneManager.LoadScene("LevelOne");
+        Pathfinder.Instance.gameObject.SetActive(true);
     }
 
     public void LoadLevelTwo()
