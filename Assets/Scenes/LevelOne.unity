@@ -1101,6 +1101,14 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 984518105100146561, guid: 9c7e2b4a000d7f642936d64f4b7367c3, type: 3}
+      propertyPath: health
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 984518105100146561, guid: 9c7e2b4a000d7f642936d64f4b7367c3, type: 3}
+      propertyPath: maxHealth
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 1442831434754516623, guid: 9c7e2b4a000d7f642936d64f4b7367c3, type: 3}
       propertyPath: animator
       value: 
