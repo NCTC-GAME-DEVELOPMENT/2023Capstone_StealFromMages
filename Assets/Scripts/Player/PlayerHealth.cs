@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour, IHealth {
     [SerializeField]
@@ -10,6 +11,7 @@ public class PlayerHealth : MonoBehaviour, IHealth {
     private float maxHealth;
     public event Action<GameObject> OnDeathCallback;
     public event Action OnPlayerHealthUpdate;
+
 
     //Animator public var 
     public Animator animator;
@@ -43,8 +45,11 @@ public class PlayerHealth : MonoBehaviour, IHealth {
         health -= _damage;
         audioSource.PlayOneShot(playerDamage);
         OnPlayerHealthUpdate?.Invoke();
-        if (health < 0) {
+        if (health < .1) {
             OnDeathCallback?.Invoke(gameObject);
+            Pathfinder.Instance.gameObject.SetActive(false);
+            gameObject.GetComponent<PlayerController>().moveSpeed = 0;
+            TickSystem.Instance.CreateTimer(OnDeath, 2);
         }
         else
         {
@@ -52,6 +57,7 @@ public class PlayerHealth : MonoBehaviour, IHealth {
             animator.SetTrigger("tookDamage");
             //get out of hurt anim
             StartCoroutine(ReturnToDefaultStateAfterDelay(0.7f));
+
 
         }
     }
@@ -70,6 +76,10 @@ public class PlayerHealth : MonoBehaviour, IHealth {
             ApplyHeal(10);
             collision.gameObject.SetActive(false);
         }
+    }
+
+    private void OnDeath() {
+        SceneManager.LoadScene(7);
     }
 
 

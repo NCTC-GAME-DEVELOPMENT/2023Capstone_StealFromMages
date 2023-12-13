@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class TickSystem : ISingleton<TickSystem>,IDisposable, IInitialize {
     private const short DEFAULT_TPS = 20;
     public static short TPS;//Ticks Per Second
@@ -48,6 +50,7 @@ public class TickSystem : ISingleton<TickSystem>,IDisposable, IInitialize {
             TickChangeEvent?.Invoke(currentTick);
         }
     }
+
     public uint GetCurrentTick() => currentTick;
     public void Dispose() {
         Dispose(true);
@@ -76,7 +79,11 @@ public class TickSystem : ISingleton<TickSystem>,IDisposable, IInitialize {
         TPSDecimal = 1f / (float)TPS;
         if (Instance == null || Instance != this)
             Instance = this;
+        SceneManager.sceneLoaded += ClearTimerList;
+    }
 
+    private void ClearTimerList(Scene arg0, LoadSceneMode arg1) {
+        TimerList.Clear();
     }
 }
 

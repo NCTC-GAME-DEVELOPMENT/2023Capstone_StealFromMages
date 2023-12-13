@@ -22,6 +22,11 @@ public class Pathfinder : MonoBehaviourSingleton<Pathfinder>
     public void FixedUpdate() {
         
     }
-    public Vector2 GetPlayerPosition() => player.transform.position;
+    public Vector2 GetPlayerPosition() {
+        if(player == null) {
+            player = GameObject.FindWithTag("Player");
+        }
+        return player.transform.position;
+    }
 
 }
