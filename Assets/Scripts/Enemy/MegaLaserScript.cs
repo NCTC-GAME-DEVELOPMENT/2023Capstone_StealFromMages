@@ -18,12 +18,20 @@ public class MegaLaserScript : MonoBehaviour
     private Transform parent;
     [SerializeField]
     private float rotationModifier;
+
+    //audio
+    public AudioClip laserAttack;
+    private AudioSource audioSource;
+
     public void Start() {
         collider.enabled = false;
         didWallHit = false;
         hasHitRecently = false;
         transform.localPosition = new Vector2(0, 0f);
         transform.localScale = new Vector2(0, 0f);
+
+        //assign audio source
+        audioSource = GetComponent<AudioSource>();
     }
     public void Shoot(int _petalsAlive) {
         petalsAlive = _petalsAlive;
@@ -40,6 +48,9 @@ public class MegaLaserScript : MonoBehaviour
             transform.localPosition = new Vector3(hit.distance / -2, 0f, -2);
             transform.localScale = new Vector3(hit.distance, .3f, 1);
             TickSystem.Instance.CreateTimer(StopShooting, 2);
+
+            //audio
+            //audioSource.PlayOneShot(laserAttack);
         }
         else {
             Debug.Log("Hit Nothing ");
