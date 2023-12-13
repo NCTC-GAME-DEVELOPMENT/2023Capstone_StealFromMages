@@ -1181,6 +1181,10 @@ PrefabInstance:
       propertyPath: attack1
       value: 
       objectReference: {fileID: 8300000, guid: 33e7132708540304193ddc319c2f3b8f, type: 3}
+    - target: {fileID: 4515291519216964300, guid: 9c7e2b4a000d7f642936d64f4b7367c3, type: 3}
+      propertyPath: attack2
+      value: 
+      objectReference: {fileID: 8300000, guid: 137dfbc5270c8db4b82bfb270fd11833, type: 3}
     - target: {fileID: 6860188843565462950, guid: 9c7e2b4a000d7f642936d64f4b7367c3, type: 3}
       propertyPath: m_Controller
       value: 
