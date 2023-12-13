@@ -25,6 +25,7 @@ public class PlayerWeapon : MonoBehaviour
 
     //audio
     public AudioClip attack1;
+    public AudioClip attack2;
     private AudioSource audioSource;
 
     void Start()
@@ -58,7 +59,15 @@ public class PlayerWeapon : MonoBehaviour
             TickSystem.Instance.CreateTimer(ResetCooldown, castCooldown);
             isOnCooldown = false;
             //play sound
-            audioSource.PlayOneShot(attack1);
+            if (weaponSlot == 0)
+            {
+                audioSource.PlayOneShot(attack1);
+            }
+            else
+            {
+                audioSource.PlayOneShot(attack2);
+            }
+            
         }
         //float angle = Mathf.Atan2(relative.x, relative.z) * Mathf.Rad2Deg;
     }
