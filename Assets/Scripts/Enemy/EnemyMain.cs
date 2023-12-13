@@ -31,6 +31,9 @@ public class EnemyMain : MonoBehaviour {
         TickSystem.Instance?.CreateTimer(DestroyEnemy, (uint)11);
         OnDeathEvent?.Invoke();
     }
+    public void SwitchHit() {
+        RecentHit = false;
+    }
     public void IsPlayerInAggroDistance() {
         if (!HasDied) {
             IsAggro = Vector2.Distance(Pathfinder.Instance.GetPlayerPosition(), transform.position) < AggroDistance;
@@ -38,9 +41,12 @@ public class EnemyMain : MonoBehaviour {
         }
     }
     void OnCollisionEnter2D(Collision2D _collision) {
-        if (_collision.gameObject.tag == "Player") {
-            _collision.gameObject.GetComponent<IHealth>()?.ApplyDamage(hitDamage);            
-            return;
+        if (!RecentHit) {
+            if (_collision.gameObject.tag == "Player") {
+                _collision.gameObject.GetComponent<IHealth>()?.ApplyDamage(hitDamage);
+                TickSystem.Instance?.CreateTimer(SwitchHit, (uint)5);
+                return;
+            }
         }
     }
     private void DestroyEnemy() {
