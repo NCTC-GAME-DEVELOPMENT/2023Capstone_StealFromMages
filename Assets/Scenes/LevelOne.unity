@@ -62232,6 +62232,22 @@ PrefabInstance:
       propertyPath: playerMana
       value: 
       objectReference: {fileID: 1149373539}
+    - target: {fileID: 3826988990240202105, guid: 27d4cd18b97c48c4088076745c5e19ae, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826988990240202105, guid: 27d4cd18b97c48c4088076745c5e19ae, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 142
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030028185154967957, guid: 27d4cd18b97c48c4088076745c5e19ae, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -56.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030028185154967957, guid: 27d4cd18b97c48c4088076745c5e19ae, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 110
+      objectReference: {fileID: 0}
     - target: {fileID: 7586144945419569701, guid: 27d4cd18b97c48c4088076745c5e19ae, type: 3}
       propertyPath: playerHealth
       value: 
